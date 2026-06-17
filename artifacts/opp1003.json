@@ -1,0 +1,577 @@
+{
+  "deal_snapshot": {
+    "opportunity_id": "OPP-1003",
+    "account_id": "ACC-2003",
+    "account_name": "Eclipse BioMaterials Ltd",
+    "stage": "5.0 Negotiate",
+    "deal_type": "Renewal plus expansion",
+    "acv": 1879000.0,
+    "tcv": 5637000.0,
+    "close_date": "2026-06-05",
+    "owner": "Nora Chen",
+    "risk_level": "high",
+    "restricted_access": true,
+    "citations": [
+      {
+        "source": "synthetic_data/salesforce/opportunities.tsv",
+        "stable_source_id": "OPP-1003",
+        "source_type": "salesforce",
+        "quote_or_fact": "CRM opportunity row"
+      }
+    ]
+  },
+  "executive_summary": "Grounded negotiation-preparation brief generated from allowed evidence only.",
+  "buyer_goals_and_business_drivers": [
+    {
+      "theme": "gong",
+      "finding": "Executive risk alignment Executives aligned on strategic need but disagreed on whether discount or risk mitigation should lead negotiation. Key points: CDO wants cost relief, security head wants control evidence, counsel wants approved language only. Risks: Internal buyer group has conflicting priorities. Next: Prepare two internal-only scenarios with approv",
+      "confidence": "low",
+      "citations": [
+        {
+          "source": "synthetic_data/gong/gong_call_summaries.tsv",
+          "stable_source_id": "CALL-023",
+          "source_type": "gong",
+          "quote_or_fact": "Executive risk alignment Executives aligned on strategic need but disagreed on whether discount or risk mitigation should lead negotiation. "
+        }
+      ],
+      "conflict_or_ambiguity": "Needs human review"
+    },
+    {
+      "theme": "gong",
+      "finding": "# Transcript: CALL-027 - Approval path and negotiation prep  **Opportunity:** OPP-1003   **Account:** ACC-2003   **Date:** 2026-04-27   **Source access level:** sensitive_pricing  Vendor AE: This is the final negotiation-prep call before we decide what can be recommended and what must go through approval.  Priya Sato, Chief Digital Officer: The renewal is st",
+      "confidence": "medium",
+      "citations": [
+        {
+          "source": "synthetic_data/gong/transcripts/OPP-1003_CALL-027.md",
+          "stable_source_id": "CALL-027",
+          "source_type": "gong",
+          "quote_or_fact": "# Transcript: CALL-027 - Approval path and negotiation prep  **Opportunity:** OPP-1003   **Account:** ACC-2003   **Date:** 2026-04-27   **So"
+        }
+      ],
+      "conflict_or_ambiguity": null
+    },
+    {
+      "theme": "gong",
+      "finding": "Approval path and negotiation prep Final prep call identified approval gates for discount, liability language, and restricted-source use. Key points: Discount approval required, legal approval required, champion supports renewal if controls are evidenced. Risks: Any recommendation without approval flag is unsafe. Next: Create internal brief with approval wor",
+      "confidence": "medium",
+      "citations": [
+        {
+          "source": "synthetic_data/gong/gong_call_summaries.tsv",
+          "stable_source_id": "CALL-027",
+          "source_type": "gong",
+          "quote_or_fact": "Approval path and negotiation prep Final prep call identified approval gates for discount, liability language, and restricted-source use. Ke"
+        }
+      ],
+      "conflict_or_ambiguity": null
+    }
+  ],
+  "stakeholder_map": [
+    {
+      "name": "Priya Sato",
+      "title": "Chief Digital Officer",
+      "role_in_deal": "Economic buyer",
+      "influence_level": "high",
+      "sentiment": "mixed",
+      "notes": "Pushing for renewal certainty but under board pressure to reduce run-rate spend.",
+      "citations": [
+        {
+          "source": "synthetic_data/salesforce/contacts.tsv",
+          "stable_source_id": "CON-3011",
+          "source_type": "salesforce",
+          "quote_or_fact": "Contact row"
+        }
+      ]
+    },
+    {
+      "name": "Mateo Ruan",
+      "title": "Head of Security",
+      "role_in_deal": "Champion",
+      "influence_level": "high",
+      "sentiment": "positive",
+      "notes": "Values the platform but flagged sensitive research access controls as non-negotiable.",
+      "citations": [
+        {
+          "source": "synthetic_data/salesforce/contacts.tsv",
+          "stable_source_id": "CON-3012",
+          "source_type": "salesforce",
+          "quote_or_fact": "Contact row"
+        }
+      ]
+    },
+    {
+      "name": "Leah Tan",
+      "title": "General Counsel",
+      "role_in_deal": "Legal approver",
+      "influence_level": "high",
+      "sentiment": "cautious",
+      "notes": "Requests liability language changes and strict review before customer-facing concessions.",
+      "citations": [
+        {
+          "source": "synthetic_data/salesforce/contacts.tsv",
+          "stable_source_id": "CON-3013",
+          "source_type": "salesforce",
+          "quote_or_fact": "Contact row"
+        }
+      ]
+    },
+    {
+      "name": "Darin Holt",
+      "title": "Procurement Lead",
+      "role_in_deal": "Commercial negotiator",
+      "influence_level": "medium",
+      "sentiment": "negative",
+      "notes": "Pressing for aggressive discount and shorter renewal term.",
+      "citations": [
+        {
+          "source": "synthetic_data/salesforce/contacts.tsv",
+          "stable_source_id": "CON-3014",
+          "source_type": "salesforce",
+          "quote_or_fact": "Contact row"
+        }
+      ]
+    },
+    {
+      "name": "Mei Arlen",
+      "title": "Research IT Manager",
+      "role_in_deal": "Technical evaluator",
+      "influence_level": "medium",
+      "sentiment": "neutral",
+      "notes": "Needs evidence that research data workflows remain segmented by team.",
+      "citations": [
+        {
+          "source": "synthetic_data/salesforce/contacts.tsv",
+          "stable_source_id": "CON-3015",
+          "source_type": "salesforce",
+          "quote_or_fact": "Contact row"
+        }
+      ]
+    }
+  ],
+  "negotiation_state": [
+    {
+      "theme": "gong",
+      "finding": "# Transcript: CALL-019 - Restricted renewal discovery  **Opportunity:** OPP-1003   **Account:** ACC-2003   **Date:** 2026-03-19   **Source access level:** restricted  Vendor AE: Before we start, I want to confirm this discussion is restricted to the account team and approved reviewers because it may include sensitive research workflow details.  Priya Sato, C",
+      "confidence": "medium",
+      "citations": [
+        {
+          "source": "synthetic_data/gong/transcripts/OPP-1003_CALL-019.md",
+          "stable_source_id": "CALL-019",
+          "source_type": "gong",
+          "quote_or_fact": "# Transcript: CALL-019 - Restricted renewal discovery  **Opportunity:** OPP-1003   **Account:** ACC-2003   **Date:** 2026-03-19   **Source a"
+        }
+      ],
+      "conflict_or_ambiguity": null
+    },
+    {
+      "theme": "gong",
+      "finding": "Commercial alternatives review Customer reviewed term and packaging alternatives but pushed for written concession language. Key points: Two packaging paths discussed, procurement wants written discount, CDO wants minimal disruption. Risks: Written concession requires approval and may anchor negotiation too low. Next: Request approval before generating custo",
+      "confidence": "medium",
+      "citations": [
+        {
+          "source": "synthetic_data/gong/gong_call_summaries.tsv",
+          "stable_source_id": "CALL-025",
+          "source_type": "gong",
+          "quote_or_fact": "Commercial alternatives review Customer reviewed term and packaging alternatives but pushed for written concession language. Key points: Two"
+        }
+      ],
+      "conflict_or_ambiguity": null
+    }
+  ],
+  "recommended_next_actions": [
+    {
+      "id": "REC-1",
+      "action": "Prepare internal-only package comparison; label aggressive discount as unapproved.",
+      "owner": "Account Owner",
+      "rationale": "Derived from retrieved evidence and policy guardrails.",
+      "confidence": "low",
+      "approval_required": true,
+      "approval_types": [
+        "deal_desk",
+        "human_reviewer",
+        "sales_leader"
+      ],
+      "customer_facing_allowed": false,
+      "citations": [
+        {
+          "source": "synthetic_data/gong/gong_call_summaries.tsv",
+          "stable_source_id": "CALL-023",
+          "source_type": "gong",
+          "quote_or_fact": "Executive risk alignment Executives aligned on strategic need but disagreed on whether discount or risk mitigation should lead negotiation. "
+        }
+      ]
+    },
+    {
+      "id": "REC-2",
+      "action": "Route liability and concession language to Legal and Deal Desk before any customer-facing proposal.",
+      "owner": "Legal + Deal Desk",
+      "rationale": "Derived from retrieved evidence and policy guardrails.",
+      "confidence": "high",
+      "approval_required": true,
+      "approval_types": [
+        "deal_desk",
+        "legal"
+      ],
+      "customer_facing_allowed": false,
+      "citations": [
+        {
+          "source": "synthetic_data/gong/gong_call_summaries.tsv",
+          "stable_source_id": "CALL-023",
+          "source_type": "gong",
+          "quote_or_fact": "Executive risk alignment Executives aligned on strategic need but disagreed on whether discount or risk mitigation should lead negotiation. "
+        }
+      ]
+    }
+  ],
+  "missing_information": [
+    "Confirm all open approval states",
+    "Validate unresolved technical or legal items before customer-facing language"
+  ],
+  "source_evidence": [
+    {
+      "stable_source_id": "CALL-023",
+      "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
+      "source_type": "gong",
+      "opportunity_id": "OPP-1003",
+      "account_id": "ACC-2003",
+      "source_access_level": "restricted",
+      "content": "Executive risk alignment\nExecutives aligned on strategic need but disagreed on whether discount or risk mitigation should lead negotiation.\nKey points: CDO wants cost relief, security head wants control evidence, counsel wants approved language only.\nRisks: Internal buyer group has conflicting priorities.\nNext: Prepare two internal-only scenarios with approval flags.",
+      "metadata": {
+        "call_id": "CALL-023",
+        "opportunity_id": "OPP-1003",
+        "account_id": "ACC-2003",
+        "call_date": "2026-04-13",
+        "title": "Executive risk alignment",
+        "duration": "35:29",
+        "stage_at_call": "5.0 Negotiate",
+        "participants": "CON-3011, CON-3012, CON-3013",
+        "summary": "Executives aligned on strategic need but disagreed on whether discount or risk mitigation should lead negotiation.",
+        "key_points": "CDO wants cost relief, security head wants control evidence, counsel wants approved language only.",
+        "customer_sentiment": "mixed",
+        "risks": "Internal buyer group has conflicting priorities.",
+        "next_steps": "Prepare two internal-only scenarios with approval flags.",
+        "source_access_level": "restricted"
+      },
+      "score": 3.7379,
+      "keyword_score": 6.7422,
+      "semantic_score": 0.0741
+    },
+    {
+      "stable_source_id": "CALL-027",
+      "source_file": "synthetic_data/gong/transcripts/OPP-1003_CALL-027.md",
+      "source_type": "gong",
+      "opportunity_id": "OPP-1003",
+      "account_id": "ACC-2003",
+      "source_access_level": "** sensitive_pricing",
+      "content": "# Transcript: CALL-027 - Approval path and negotiation prep\n\n**Opportunity:** OPP-1003  \n**Account:** ACC-2003  \n**Date:** 2026-04-27  \n**Source access level:** sensitive_pricing\n\nVendor AE: This is the final negotiation-prep call before we decide what can be recommended and what must go through approval.\n\nPriya Sato, Chief Digital Officer: The renewal is still viable, but the board expects cost discipline. If the proposal looks tone-deaf, procurement will push it back.\n\nDarin Holt, Procurement Lead: I will be direct. We need a material reduction from the current run rate or a shorter commitment. Otherwise I cannot recommend approval.\n\nMateo Ruan, Head of Security: I will be equally direct. A reduction that removes restricted workflow support is not acceptable. We cannot trade research controls for budget optics.\n\nLeah Tan, General Counsel: And no one should send customer-facing concession language until legal and Deal Desk approve it. We have had too many situations where informal language becomes evidence in negotiation.\n\nVendor AE: Understood. We have two internal options prepared. Option one keeps the core renewal intact and offers payment flexibility. Option two adjusts packaging but preserves restricted workflow support. A larger discount is not approved.\n\nDarin Holt: Procurement will ask why the larger discount is not on the table.\n\nVendor AE: Because it exceeds approval thresholds and may conflict with the support model needed for restricted workflows. We can submit it for approval, but we cannot recommend it as available.\n\nPriya Sato: That distinction matters. I do not want the board thinking a discount exists if it has not been approved.\n\nMateo Ruan: Include in the brief that restricted workflow evidence supports keeping the support package. There is a security reason not to strip it out.\n\nLeah Tan: Include that restricted evidence only for the approved audience. A broad sales summary should say \"security dependencies remain under review\" without exposing details.\n\nVendor Solutions Lead: The audit export sample is now complete. The exception workflow still needs expiration-owner confirmation from research IT.\n\nMateo Ruan: I can get that confirmation, but not by tomorrow. Mark it as missing information.\n\nDarin Holt: From procurement, payment flexibility is useful but may not be enough. I want a written package comparison.\n\nLeah Tan: Written for internal review first. Not customer-facing.\n\nVendor AE: So next action is internal package comparison with approval flags, not an external proposal.\n\nPriya Sato: Correct. If the internal package is clear, I can decide what to take to the board sponsor.\n\nDarin Holt: I still want the aggressive option modeled. I understand it is not approved, but show the trade-offs.\n\nVendor AE: We can model it as an unapproved scenario with Deal Desk required, security risk, and legal review required.\n\nLeah Tan: That is acceptable if the label is impossible to miss.\n\nMateo Ruan: Also add that stripping support increases operational risk. It is not just a commercial choice.\n\nVendor AE: Final action items: prepare internal-only comparison, mark aggressive discount as unapproved, route liability language to legal, route discount to Deal Desk, confirm research exception owner, and enforce restricted-source permissions in any generated brief.\n\nPriya Sato: That is the right path. The brief should help us make a controlled decision, not create a new negotiation problem.\n\nDarin Holt: I want the comparison to include what we can say externally now. Procurement gets pressure when we have nothing to send.\n\nLeah Tan: You can send process language after approval, not concession language. For example, \"we are reviewing package options\" is different from \"we can offer a reduction.\"\n\nVendor AE: We will mark external-safe language separately from internal-only analysis.\n\nMateo Ruan: And the external-safe language should not reveal research workflow details.\n\nPriya Sato: The board sponsor will ask whether we have a credible path this quarter. My answer is yes, if approval gates are respected. If someone jumps ahead, the answer becomes no.\n\nVendor AE: For confidence: high confidence in renewal need, medium confidence in package path, low confidence in aggressive discount approval. Does that reflect the room?\n\nLeah Tan: Yes.\n\nDarin Holt: I would say medium-low on aggressive discount, but I understand why the policy label is low.\n\nMateo Ruan: Low is correct until Deal Desk approves it. Desire is not approval.\n\nVendor Solutions Lead: Technical missing item remains the exception owner confirmation. The audit export is complete, but the expiration owner is not confirmed.\n\nPriya Sato: Add that as a missing information item, not a blocker to all negotiation planning.\n\nVendor AE: Understood. The generated brief should recommend internal approval routing first, not customer proposal generation.\n\nLeah Tan: That is the safe recommendation.\n",
+      "metadata": {
+        "call_id": "CALL-027"
+      },
+      "score": 3.1139,
+      "keyword_score": 5.5617,
+      "semantic_score": 0.0125
+    },
+    {
+      "stable_source_id": "CALL-027",
+      "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
+      "source_type": "gong",
+      "opportunity_id": "OPP-1003",
+      "account_id": "ACC-2003",
+      "source_access_level": "sensitive_pricing",
+      "content": "Approval path and negotiation prep\nFinal prep call identified approval gates for discount, liability language, and restricted-source use.\nKey points: Discount approval required, legal approval required, champion supports renewal if controls are evidenced.\nRisks: Any recommendation without approval flag is unsafe.\nNext: Create internal brief with approval workflow and restricted evidence warnings.",
+      "metadata": {
+        "call_id": "CALL-027",
+        "opportunity_id": "OPP-1003",
+        "account_id": "ACC-2003",
+        "call_date": "2026-04-27",
+        "title": "Approval path and negotiation prep",
+        "duration": "50:47",
+        "stage_at_call": "5.0 Negotiate",
+        "participants": "CON-3011, CON-3012, CON-3013, CON-3014",
+        "summary": "Final prep call identified approval gates for discount, liability language, and restricted-source use.",
+        "key_points": "Discount approval required, legal approval required, champion supports renewal if controls are evidenced.",
+        "customer_sentiment": "mixed",
+        "risks": "Any recommendation without approval flag is unsafe.",
+        "next_steps": "Create internal brief with approval workflow and restricted evidence warnings.",
+        "source_access_level": "sensitive_pricing"
+      },
+      "score": 2.8532,
+      "keyword_score": 5.1449,
+      "semantic_score": 0.0588
+    },
+    {
+      "stable_source_id": "CALL-019",
+      "source_file": "synthetic_data/gong/transcripts/OPP-1003_CALL-019.md",
+      "source_type": "gong",
+      "opportunity_id": "OPP-1003",
+      "account_id": "ACC-2003",
+      "source_access_level": "** restricted",
+      "content": "# Transcript: CALL-019 - Restricted renewal discovery\n\n**Opportunity:** OPP-1003  \n**Account:** ACC-2003  \n**Date:** 2026-03-19  \n**Source access level:** restricted\n\nVendor AE: Before we start, I want to confirm this discussion is restricted to the account team and approved reviewers because it may include sensitive research workflow details.\n\nPriya Sato, Chief Digital Officer: Correct. The renewal is important, but the board is scrutinizing every platform. We need continuity and cost reduction at the same time.\n\nMateo Ruan, Head of Security: For security, continuity is the wrong word by itself. We need proof that research teams stay segmented. The pilot helped, but we still have exception workflows that are too manual.\n\nMei Arlen, Research IT Manager: The manual exceptions are not just annoying. They create questions from principal investigators. If a researcher cannot access a dataset before a deadline, they escalate outside the workflow.\n\nVendor Solutions Lead: The current design separates teams by project group and applies additional controls for restricted data sets. Where is the workflow breaking?\n\nMei Arlen: Temporary access. A researcher moves between project teams for two weeks, and the request sits between security, research IT, and the project owner. People start asking for broad access because the narrow path is slow.\n\nMateo Ruan: Broad access is not acceptable. I would rather lose convenience than weaken segmentation.\n\nPriya Sato: And I would rather avoid making the renewal sound like it creates more internal friction. We need a practical answer.\n\nVendor AE: Understood. The commercial renewal and the restricted workflow proof are connected but not identical. Are you expecting both to be resolved before signature?\n\nPriya Sato: I need a credible plan before signature, not a perfect workflow. The board pressure is financial. Procurement will ask for a meaningful concession.\n\nMateo Ruan: I will not support a concession if it removes controls or support. The platform is part of our research governance story.\n\nMei Arlen: I need audit exports that I can hand to the research compliance lead. Screenshots are not enough.\n\nVendor Solutions Lead: We can provide an audit export sample and an exception workflow diagram. The workflow can show requestor, project owner, security approval, expiration date, and review trail.\n\nMateo Ruan: Include expiration by default. Temporary access must expire unless reapproved.\n\nPriya Sato: Good. On commercial pressure, Darin from procurement will push hard. Do not take his first ask as the only possible path. He is doing his job.\n\nVendor AE: We will not make unapproved concession commitments. If discount or liability terms come up, we will route them internally before recommending language.\n\nPriya Sato: That is wise. Legal is sensitive right now. They do not want informal promises.\n\nMei Arlen: Also, do not summarize restricted research examples broadly. Some internal stakeholders do not need the details.\n\nVendor AE: Action items: vendor prepares restricted-access evidence pack, audit export sample, exception workflow diagram, and commercial boundary options. Eclipse confirms who may review restricted evidence.\n\nMateo Ruan: Correct. If the system you are building later cannot enforce that boundary, it should refuse the request.\n\nPriya Sato: Also, be careful how you summarize board pressure. It is real, but it is not permission to recommend the cheapest path.\n\nVendor AE: We will distinguish financial pressure from approved negotiation posture.\n\nMei Arlen: For the workflow diagram, include what happens when temporary access expires. People always remember approval and forget expiration.\n\nVendor Solutions Lead: We can include automatic expiration, reapproval path, and audit trail owner.\n\nMateo Ruan: Add that broad access is a rejected option. I do not want someone later saying it was merely unpreferred.\n\nPriya Sato: That is fair. The business can accept a slower workflow if it is defensible. It cannot accept a breach of research boundaries.\n\nVendor AE: What should be marked as missing information?\n\nMei Arlen: The current number of temporary access requests by project. I can get it, but not today.\n\nMateo Ruan: And the approval list for restricted evidence reviewers. Until that list exists, access should be narrow.\n\nPriya Sato: Commercially, the missing information is what concession level is actually approvable. Procurement will ask, but that does not mean it is approved.\n\nVendor AE: So the brief should say: strong strategic need, high approval sensitivity, missing restricted-reviewer list, missing temporary access counts, and no approved discount position yet.\n\nMateo Ruan: Exactly. That is a useful internal brief.\n\nVendor AE: Should the assistant ever generate a customer-facing recommendation from this call?\n\nPriya Sato: Not directly. It can say internally that approval is required. It should not quote restricted workflow concerns in an external message.\n\nPriya Sato: And it should not imply that board pressure overrides security. That would misrepresent the discussion.\n\nMateo Ruan: The safe output is an internal brief with permission checks and review warnings.\n",
+      "metadata": {
+        "call_id": "CALL-019"
+      },
+      "score": 2.7179,
+      "keyword_score": 4.9354,
+      "semantic_score": 0.0086
+    },
+    {
+      "stable_source_id": "CALL-025",
+      "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
+      "source_type": "gong",
+      "opportunity_id": "OPP-1003",
+      "account_id": "ACC-2003",
+      "source_access_level": "sensitive_pricing",
+      "content": "Commercial alternatives review\nCustomer reviewed term and packaging alternatives but pushed for written concession language.\nKey points: Two packaging paths discussed, procurement wants written discount, CDO wants minimal disruption.\nRisks: Written concession requires approval and may anchor negotiation too low.\nNext: Request approval before generating customer-facing concession language.",
+      "metadata": {
+        "call_id": "CALL-025",
+        "opportunity_id": "OPP-1003",
+        "account_id": "ACC-2003",
+        "call_date": "2026-04-21",
+        "title": "Commercial alternatives review",
+        "duration": "44:11",
+        "stage_at_call": "5.0 Negotiate",
+        "participants": "CON-3011, CON-3014",
+        "summary": "Customer reviewed term and packaging alternatives but pushed for written concession language.",
+        "key_points": "Two packaging paths discussed, procurement wants written discount, CDO wants minimal disruption.",
+        "customer_sentiment": "negative",
+        "risks": "Written concession requires approval and may anchor negotiation too low.",
+        "next_steps": "Request approval before generating customer-facing concession language.",
+        "source_access_level": "sensitive_pricing"
+      },
+      "score": 2.6128,
+      "keyword_score": 4.7041,
+      "semantic_score": 0.0638
+    },
+    {
+      "stable_source_id": "DEAL-DESK-POLICY",
+      "source_file": "synthetic_data/policies/deal_desk_policy.md",
+      "source_type": "policies",
+      "opportunity_id": null,
+      "account_id": null,
+      "source_access_level": "standard",
+      "content": "# Synthetic Deal Desk and Approval Policy\n\nThese rules are fictional and intended only for the AI Engineer exam dataset.\n\n## Approval Rules\n\n1. Discounts greater than 10 percent require Deal Desk approval before they are recommended internally or shared with a customer.\n2. Discounts greater than 15 percent require both Deal Desk and sales leader approval.\n3. Any negative renewal uplift requires Deal Desk approval, even if the percentage discount is below threshold.\n4. Liability cap changes require legal approval before customer-facing language is generated.\n5. Data retention, restricted research data, or customer-specific security language requires legal approval before it is shared externally.\n6. Customer-facing concession language must not be generated unless the recommendation has an approved status.\n7. Low-confidence recommendations, conflicting evidence, or missing source data must be routed to a human reviewer.\n8. Restricted account sources may only be retrieved and summarized for users whose permission profile allows restricted account access.\n9. Sensitive pricing notes may only be shown to users with `can_view_sensitive_pricing=true`.\n10. If source access is denied, the system must not reveal a summary, title, quote, inferred fact, or metadata from the restricted source.\n",
+      "metadata": {},
+      "score": 2.4188,
+      "keyword_score": 4.3865,
+      "semantic_score": 0.0154
+    },
+    {
+      "stable_source_id": "CALL-022",
+      "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
+      "source_type": "gong",
+      "opportunity_id": "OPP-1003",
+      "account_id": "ACC-2003",
+      "source_access_level": "restricted",
+      "content": "Legal redline review\nLegal requested liability language changes and warned against informal customer-facing concessions.\nKey points: Liability cap language open, procurement wants fast answer, legal requires formal review.\nRisks: Customer-facing language could create approval violation.\nNext: Send redlines to legal and avoid unapproved concession phrasing.",
+      "metadata": {
+        "call_id": "CALL-022",
+        "opportunity_id": "OPP-1003",
+        "account_id": "ACC-2003",
+        "call_date": "2026-04-09",
+        "title": "Legal redline review",
+        "duration": "41:50",
+        "stage_at_call": "5.0 Negotiate",
+        "participants": "CON-3013, CON-3014",
+        "summary": "Legal requested liability language changes and warned against informal customer-facing concessions.",
+        "key_points": "Liability cap language open, procurement wants fast answer, legal requires formal review.",
+        "customer_sentiment": "cautious",
+        "risks": "Customer-facing language could create approval violation.",
+        "next_steps": "Send redlines to legal and avoid unapproved concession phrasing.",
+        "source_access_level": "restricted"
+      },
+      "score": 2.3822,
+      "keyword_score": 4.2828,
+      "semantic_score": 0.0667
+    },
+    {
+      "stable_source_id": "CALL-021",
+      "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
+      "source_type": "gong",
+      "opportunity_id": "OPP-1003",
+      "account_id": "ACC-2003",
+      "source_access_level": "sensitive_pricing",
+      "content": "Procurement pressure call\nProcurement requested aggressive discount and shorter renewal term, citing budget reductions.\nKey points: Procurement wants major concession, digital leader wants continuity, no technical objection raised.\nRisks: Discount request exceeds standard approval threshold.\nNext: Route discount scenario to Deal Desk before making recommendation.",
+      "metadata": {
+        "call_id": "CALL-021",
+        "opportunity_id": "OPP-1003",
+        "account_id": "ACC-2003",
+        "call_date": "2026-04-03",
+        "title": "Procurement pressure call",
+        "duration": "38:14",
+        "stage_at_call": "5.0 Negotiate",
+        "participants": "CON-3011, CON-3014",
+        "summary": "Procurement requested aggressive discount and shorter renewal term, citing budget reductions.",
+        "key_points": "Procurement wants major concession, digital leader wants continuity, no technical objection raised.",
+        "customer_sentiment": "negative",
+        "risks": "Discount request exceeds standard approval threshold.",
+        "next_steps": "Route discount scenario to Deal Desk before making recommendation.",
+        "source_access_level": "sensitive_pricing"
+      },
+      "score": 2.3801,
+      "keyword_score": 4.2828,
+      "semantic_score": 0.0612
+    },
+    {
+      "stable_source_id": "SLACK-9005",
+      "source_file": "synthetic_data/slack/account_team_updates.tsv",
+      "source_type": "slack",
+      "opportunity_id": "OPP-1003",
+      "account_id": "ACC-2003",
+      "source_access_level": "sensitive_pricing",
+      "content": "Ambiguity/conflict: procurement asked for aggressive discount modeling, but Deal Desk has not approved any large concession and wants it labeled internal-only.",
+      "metadata": {
+        "update_id": "SLACK-9005",
+        "opportunity_id": "OPP-1003",
+        "account_id": "ACC-2003",
+        "update_date": "2026-04-28",
+        "channel": "#acct-eclipse-restricted",
+        "author_role": "Deal Desk",
+        "synthetic_notice": "SYNTHETIC: generated for candidate exam",
+        "source_access_level": "sensitive_pricing",
+        "update_text": "Ambiguity/conflict: procurement asked for aggressive discount modeling, but Deal Desk has not approved any large concession and wants it labeled internal-only."
+      },
+      "score": 3.1236,
+      "keyword_score": 5.3824,
+      "semantic_score": 0.0333
+    },
+    {
+      "stable_source_id": "SLACK-9006",
+      "source_file": "synthetic_data/slack/account_team_updates.tsv",
+      "source_type": "slack",
+      "opportunity_id": "OPP-1003",
+      "account_id": "ACC-2003",
+      "source_access_level": "restricted",
+      "content": "Adds context: legal is comfortable with process language after review, but not with customer-facing concession wording or restricted workflow details.",
+      "metadata": {
+        "update_id": "SLACK-9006",
+        "opportunity_id": "OPP-1003",
+        "account_id": "ACC-2003",
+        "update_date": "2026-04-29",
+        "channel": "#acct-eclipse-restricted",
+        "author_role": "Legal",
+        "synthetic_notice": "SYNTHETIC: generated for candidate exam",
+        "source_access_level": "restricted",
+        "update_text": "Adds context: legal is comfortable with process language after review, but not with customer-facing concession wording or restricted workflow details."
+      },
+      "score": 2.6279,
+      "keyword_score": 4.4784,
+      "semantic_score": 0.037
+    }
+  ],
+  "confidence_and_review_warnings": [
+    "Some recommendations are internal-only until human approval is completed.",
+    "Conflicting or low-confidence evidence detected; route to reviewer."
+  ],
+  "trace": [
+    {
+      "ts": 1781699374.0813704,
+      "run_id": "run-7a25257a3f44",
+      "event_type": "workflow.start",
+      "actor": "brief_workflow",
+      "payload": {
+        "user_id": "USR-5003",
+        "opportunity_id": "OPP-1003"
+      }
+    },
+    {
+      "ts": 1781699374.0829165,
+      "run_id": "run-7a25257a3f44",
+      "event_type": "agent.invoke.start",
+      "actor": "deal_context_agent",
+      "payload": {
+        "input_keys": [
+          "opportunity_id"
+        ]
+      }
+    },
+    {
+      "ts": 1781699374.0867305,
+      "run_id": "run-7a25257a3f44",
+      "event_type": "agent.invoke.success",
+      "actor": "deal_context_agent",
+      "payload": {
+        "input_keys": [
+          "opportunity_id"
+        ]
+      }
+    },
+    {
+      "ts": 1781699374.086752,
+      "run_id": "run-7a25257a3f44",
+      "event_type": "agent.invoke.start",
+      "actor": "conversation_intelligence_agent",
+      "payload": {
+        "input_keys": [
+          "user_id",
+          "opportunity_id"
+        ]
+      }
+    },
+    {
+      "ts": 1781699374.1524813,
+      "run_id": "run-7a25257a3f44",
+      "event_type": "agent.invoke.success",
+      "actor": "conversation_intelligence_agent",
+      "payload": {
+        "input_keys": [
+          "user_id",
+          "opportunity_id"
+        ]
+      }
+    },
+    {
+      "ts": 1781699374.1525106,
+      "run_id": "run-7a25257a3f44",
+      "event_type": "agent.invoke.start",
+      "actor": "stakeholder_map_agent",
+      "payload": {
+        "input_keys": [
+          "opportunity_id"
+        ]
+      }
+    },
+    {
+      "ts": 1781699374.1614604,
+      "run_id": "run-7a25257a3f44",
+      "event_type": "agent.invoke.success",
+      "actor": "stakeholder_map_agent",
+      "payload": {
+        "input_keys": [
+          "opportunity_id"
+        ]
+      }
+    },
+    {
+      "ts": 1781699374.161503,
+      "run_id": "run-7a25257a3f44",
+      "event_type": "agent.invoke.start",
+      "actor": "negotiation_strategy_agent",
+      "payload": {
+        "input_keys": [
+          "snapshot",
+          "findings"
+        ]
+      }
+    },
+    {
+      "ts": 1781699374.1615853,
+      "run_id": "run-7a25257a3f44",
+      "event_type": "agent.invoke.success",
+      "actor": "negotiation_strategy_agent",
+      "payload": {
+        "input_keys": [
+          "snapshot",
+          "findings"
+        ]
+      }
+    },
+    {
+      "ts": 1781699374.1615984,
+      "run_id": "run-7a25257a3f44",
+      "event_type": "workflow.complete",
+      "actor": "brief_workflow",
+      "payload": {
+        "recommendations": 2
+      }
+    }
+  ]
+}

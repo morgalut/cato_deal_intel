@@ -1,0 +1,54 @@
+line-length = 100
+target-version = "py312"
+src = ["app", "scripts", "tests"]
+
+exclude = [
+  ".venv",
+  "venv",
+  "__pycache__",
+  ".pytest_cache",
+  ".mypy_cache",
+  ".ruff_cache",
+  "dist",
+  "build",
+  "data",
+  "artifacts",
+]
+
+[lint]
+select = [
+  "E",
+  "F",
+  "W",
+  "I",
+  "B",
+  "UP",
+  "N",
+  "ANN",
+  "ASYNC",
+  "C4",
+  "DTZ",
+  "PIE",
+  "PT",
+  "RET",
+  "SIM",
+  "ARG",
+  "PTH",
+  "RUF",
+  "TRY",
+  "PERF",
+  "LOG",
+]
+
+ignore = [
+  "ANN401",
+]
+
+[lint.per-file-ignores]
+"tests/**/*.py" = ["ANN", "S101", "ARG"]
+"scripts/**/*.py" = ["T201"]
+
+[format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
