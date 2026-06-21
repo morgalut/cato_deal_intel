@@ -5,6 +5,7 @@ from typing import Any
 
 from app.agents.base import AgentBase
 from app.observability.tracing import TraceBuffer
+from app.observability.langsmith_tracing import traced
 from app.tools.retrieval_tools import RetrieveEvidenceInput
 
 
@@ -25,6 +26,10 @@ class ConversationIntelligenceAgent(AgentBase):
         super().__init__(trace, llm=llm)
         self.retrieval_tool: Any = retrieval_tool
 
+    @traced(
+        name="Agent.ConversationIntelligenceAgent",
+        run_type="chain",
+    )
     def _run(self, payload: dict[str, Any]) -> dict[str, Any]:
         docs: list[dict[str, Any]] = self.retrieval_tool.run(
             RetrieveEvidenceInput(
@@ -67,9 +72,12 @@ class ConversationIntelligenceAgent(AgentBase):
             system: str = (
                 "You are the Conversation Intelligence Agent for a sales "
                 "negotiation brief. Use only the supplied evidence. Return "
+                
                 "JSON with findings[]. Each finding must include theme, "
                 "finding, confidence, citations, conflict_or_ambiguity. "
                 "Do not invent numbers, dates, stakeholders, discounts, or quotes."
+                "Do not return citation ids as strings. Each citation must be an object with "
+                "source, stable_source_id, source_type, and quote_or_fact. "
             )
 
             user: str = json.dumps(

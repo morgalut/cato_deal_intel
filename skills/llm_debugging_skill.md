@@ -12,10 +12,10 @@ Use LangSmith and local traces for every LLM phase:
 - guardrail blocks
 
 Environment:
-LANGCHAIN_TRACING_V2=true
-LANGCHAIN_ENDPOINT=https://api.smith.langchain.com
-LANGCHAIN_API_KEY=...
-LANGCHAIN_PROJECT=cato-deal-intelligence
+LANGSMITH_TRACING=true
+LANGSMITH_ENDPOINT=https://api.smith.langchain.com
+LANGSMITH_API_KEY=LANGSMITH_API_KEY
+LANGSMITH_PROJECT=cato-deal-intelligence
 
 Additional debugging tools:
 - OpenTelemetry for API spans

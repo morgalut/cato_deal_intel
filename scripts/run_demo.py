@@ -1,36 +1,88 @@
-import argparse, json, sys
+from __future__ import annotations
+
+import argparse
+import json
 from pathlib import Path
+from typing import Any
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-from cato_deal_intel.app.workflows.brief_workflow import BriefWorkflow
-from cato_deal_intel.app.security.permissions import PermissionDeniedError
+from app.dependencies.container import get_brief_workflow
+from app.security.permissions import PermissionDeniedError
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--user", required=True)
-parser.add_argument("--opp", required=True)
-parser.add_argument("--out", default="artifacts/brief.json")
-args = parser.parse_args()
-try:
-    brief = BriefWorkflow(data_dir=str(ROOT / "data")).run(args.user, args.opp)
-except PermissionDeniedError:
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Generate a Strategic Deal Intelligence Brief.",
+    )
+    parser.add_argument("--user", required=True)
+    parser.add_argument("--opp", required=True)
+    parser.add_argument("--out", default="artifacts/brief.json")
+    return parser.parse_args()
+
+
+def write_json(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+    path.write_text(
+        json.dumps(
+            payload,
+            indent=2,
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+
+
+def main() -> int:
+    args = parse_args()
+    output_path = Path(args.out)
+
+    try:
+        result: dict[str, Any] = get_brief_workflow().run(
+            args.user,
+            args.opp,
+        )
+
+    except PermissionDeniedError as exc:
+        denied_payload: dict[str, Any] = {
+            "status": "denied",
+            "reason": exc.reason,
+            "message": "Access denied without leaking restricted metadata.",
+        }
+
+        print(
+            json.dumps(
+                denied_payload,
+                indent=2,
+                ensure_ascii=False,
+            )
+        )
+
+        return 2
+
+    write_json(
+        output_path,
+        result,
+    )
+
+    brief: dict[str, Any] = result["brief"]
+
     print(
         json.dumps(
-            {"status": "denied", "message": "Access denied without leaking restricted metadata."},
+            {
+                "status": "ok",
+                "output": str(output_path),
+                "recommendations": len(brief["recommended_next_actions"]),
+                "trace_events": len(brief["trace"]),
+            },
             indent=2,
+            ensure_ascii=False,
         )
     )
-    raise SystemExit(2)
-Path(ROOT / args.out).parent.mkdir(parents=True, exist_ok=True)
-Path(ROOT / args.out).write_text(json.dumps(brief, indent=2, ensure_ascii=False), encoding="utf-8")
-print(
-    json.dumps(
-        {
-            "status": "ok",
-            "output": args.out,
-            "recommendations": len(brief["recommended_next_actions"]),
-            "trace_events": len(brief["trace"]),
-        },
-        indent=2,
-    )
-)
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

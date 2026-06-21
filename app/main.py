@@ -1,6 +1,8 @@
 from __future__ import annotations
+from dotenv import load_dotenv
+load_dotenv()
 
-from app.api.endpoints import briefs, health, ingest
+from app.api.endpoints import approvals, briefs, health, ingest
 from app.observability.logging import configure_logging
 from fastapi import FastAPI
 
@@ -13,10 +15,16 @@ def create_app() -> FastAPI:
     """
 
     configure_logging()
-    app = FastAPI(title="Strategic Deal Intelligence Assistant")
+
+    app = FastAPI(
+        title="Strategic Deal Intelligence Assistant",
+    )
+
+    app.include_router(approvals.router)
     app.include_router(health.router)
     app.include_router(ingest.router)
     app.include_router(briefs.router)
+
     return app
 
 

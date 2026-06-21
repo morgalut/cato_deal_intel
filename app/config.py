@@ -30,7 +30,7 @@ class Settings:
     )
 
     # LangSmith / LangChain tracing
-    langchain_tracing_v2: bool = _get_bool("LANGCHAIN_TRACING_V2", True)
+    LANGSMITH_TRACING: bool = _get_bool("LANGSMITH_TRACING", True)
     langchain_endpoint: str = os.getenv(
         "LANGCHAIN_ENDPOINT",
         "https://api.smith.langchain.com",

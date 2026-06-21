@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib
 import json
 import logging
 import sys
@@ -7,12 +8,10 @@ import time
 import uuid
 from collections.abc import Generator
 from contextlib import contextmanager
-from typing import Any, Protocol
+from types import ModuleType
+from typing import Any, Protocol, cast
 
-try:
-    import structlog  # type: ignore
-except Exception:  # pragma: no cover
-    structlog = None
+STRUCTLOG_MODULE = "structlog"
 
 
 class LoggerProtocol(Protocol):
@@ -32,7 +31,6 @@ class JsonFallbackLogger:
             "event": event,
             **fields,
         }
-
         print(json.dumps(payload, ensure_ascii=False))
 
     def info(self, event: str, **fields: Any) -> None:
@@ -42,46 +40,47 @@ class JsonFallbackLogger:
         self._emit("error", event, **fields)
 
 
+def _load_structlog() -> ModuleType | None:
+    try:
+        return importlib.import_module(STRUCTLOG_MODULE)
+    except ImportError:
+        return None
+
+
 def configure_logging(level: str = "INFO") -> None:
     logging.basicConfig(
         format="%(message)s",
         stream=sys.stdout,
-        level=getattr(
-            logging,
-            level.upper(),
-            logging.INFO,
-        ),
+        level=getattr(logging, level.upper(), logging.INFO),
     )
 
-    if structlog is None:
+    structlog_module = _load_structlog()
+
+    if structlog_module is None:
         return
 
-    structlog.configure(
+    structlog_module.configure(
         processors=[
-            structlog.contextvars.merge_contextvars,
-            structlog.processors.TimeStamper(fmt="iso"),
-            structlog.processors.add_log_level,
-            structlog.processors.JSONRenderer(
-                ensure_ascii=False,
-            ),
+            structlog_module.contextvars.merge_contextvars,
+            structlog_module.processors.TimeStamper(fmt="iso"),
+            structlog_module.processors.add_log_level,
+            structlog_module.processors.JSONRenderer(ensure_ascii=False),
         ],
-        wrapper_class=structlog.make_filtering_bound_logger(
-            getattr(
-                logging,
-                level.upper(),
-                logging.INFO,
-            )
+        wrapper_class=structlog_module.make_filtering_bound_logger(
+            getattr(logging, level.upper(), logging.INFO)
         ),
-        logger_factory=structlog.PrintLoggerFactory(),
+        logger_factory=structlog_module.PrintLoggerFactory(),
         cache_logger_on_first_use=True,
     )
 
 
 def get_logger(name: str) -> LoggerProtocol:
-    if structlog is None:
+    structlog_module = _load_structlog()
+
+    if structlog_module is None:
         return JsonFallbackLogger(name)
 
-    return structlog.get_logger(name)
+    return cast(LoggerProtocol, structlog_module.get_logger(name))
 
 
 @contextmanager
@@ -90,45 +89,26 @@ def log_stage(
     stage: str,
     **fields: Any,
 ) -> Generator[str, None, None]:
-    """Log start/success/error/duration for a deterministic stage."""
+    started = time.perf_counter()
+    stage_id = fields.pop("stage_id", f"stage-{uuid.uuid4().hex[:10]}")
 
-    started: float = time.perf_counter()
-
-    stage_id: str = fields.pop(
-        "stage_id",
-        f"stage-{uuid.uuid4().hex[:10]}",
-    )
-
-    logger.info(
-        "stage.start",
-        stage=stage,
-        stage_id=stage_id,
-        **fields,
-    )
+    logger.info("stage.start", stage=stage, stage_id=stage_id, **fields)
 
     try:
         yield stage_id
-
         logger.info(
             "stage.success",
             stage=stage,
             stage_id=stage_id,
-            duration_ms=round(
-                (time.perf_counter() - started) * 1000,
-                2,
-            ),
+            duration_ms=round((time.perf_counter() - started) * 1000, 2),
             **fields,
         )
-
     except Exception as exc:
         logger.exception(
             "stage.error",
             stage=stage,
             stage_id=stage_id,
-            duration_ms=round(
-                (time.perf_counter() - started) * 1000,
-                2,
-            ),
+            duration_ms=round((time.perf_counter() - started) * 1000, 2),
             error=repr(exc),
             **fields,
         )

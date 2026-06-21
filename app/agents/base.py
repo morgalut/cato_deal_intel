@@ -37,6 +37,7 @@ class AgentBase(ABC):
             )
             return result
 
+
     @abstractmethod
     def _run(self, payload: dict[str, Any]) -> dict[str, Any]:
         raise NotImplementedError

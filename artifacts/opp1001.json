@@ -1,591 +1,528 @@
 {
-  "deal_snapshot": {
-    "opportunity_id": "OPP-1001",
-    "account_id": "ACC-2001",
-    "account_name": "Northstar Foods Cooperative",
-    "stage": "6.0 Order Review",
-    "deal_type": "Renewal",
-    "acv": 4217500.0,
-    "tcv": 12652500.0,
-    "close_date": "2026-05-17",
-    "owner": "Maya Levin",
-    "risk_level": "medium",
-    "restricted_access": false,
-    "citations": [
-      {
-        "source": "synthetic_data/salesforce/opportunities.tsv",
-        "stable_source_id": "OPP-1001",
-        "source_type": "salesforce",
-        "quote_or_fact": "CRM opportunity row"
-      }
-    ]
-  },
-  "executive_summary": "Grounded negotiation-preparation brief generated from allowed evidence only.",
-  "buyer_goals_and_business_drivers": [
-    {
-      "theme": "gong",
-      "finding": "Security outcomes alignment Buyer linked renewal to measurable reduction in unmanaged access and cloud policy drift. Key points: CISO wants quarterly success metrics, network lead wants dashboard exports, competitor mentioned as cheaper but less integrated. Risks: Price pressure could increase if outcomes are not quantified. Next: Share outcome metrics templ",
-      "confidence": "medium",
-      "citations": [
-        {
-          "source": "synthetic_data/gong/gong_call_summaries.tsv",
-          "stable_source_id": "CALL-003",
-          "source_type": "gong",
-          "quote_or_fact": "Security outcomes alignment Buyer linked renewal to measurable reduction in unmanaged access and cloud policy drift. Key points: CISO wants "
-        }
-      ],
-      "conflict_or_ambiguity": null
+    "brief": {
+        "deal_snapshot": {
+            "opportunity_id": "OPP-1001",
+            "account_id": "ACC-2001",
+            "account_name": "Northstar Foods Cooperative",
+            "stage": "6.0 Order Review",
+            "deal_type": "Renewal",
+            "acv": 4217500.0,
+            "tcv": 12652500.0,
+            "close_date": "2026-05-17",
+            "owner": "Maya Levin",
+            "risk_level": "medium",
+            "restricted_access": false,
+            "citations": [
+                {
+                    "source": "database:opportunities",
+                    "stable_source_id": "OPP-1001",
+                    "source_type": "salesforce",
+                    "quote_or_fact": "CRM opportunity row"
+                }
+            ]
+        },
+        "executive_summary": "Grounded negotiation-preparation brief generated from allowed evidence only.",
+        "buyer_goals_and_business_drivers": [
+            {
+                "theme": "gong",
+                "finding": "Security outcomes alignment Buyer linked renewal to measurable reduction in unmanaged access and cloudpolicy drift. Key points: CISO wants quarterly success metrics, network lead wants dashboard exports, competitor mentioned as cheaper but less integrated. Risks: Price pressure could increase if outcomes are not quantified. Next: Share outcome metrics templ",
+                "confidence": "medium",
+                "citations": [
+                    {
+                        "source": "synthetic_data/gong/gong_call_summaries.tsv",
+                        "stable_source_id": "CALL-003",
+                        "source_type": "gong",
+                        "quote_or_fact": "Security outcomes alignment Buyer linked renewal to measurable reduction in unmanaged access and cloud policy drift. Key points: CISO wants"
+                    }
+                ],
+                "conflict_or_ambiguity": null
+            },
+            {
+                "theme": "gong",
+                "finding": "Executive checkpoint Executive buyer confirmed business case but asked for final risk register before signature. Key points: Business case accepted, legal not fully closed, buyer wants single escalation owner. Risks: Final risk register may be too vague for executive approval if legal dependency is omitted. Next: Clarify legal dependency and send final risk ",
+                "confidence": "medium",
+                "citations": [
+                    {
+                        "source": "synthetic_data/gong/gong_call_summaries.tsv",
+                        "stable_source_id": "CALL-005",
+                        "source_type": "gong",
+                        "quote_or_fact": "Executive checkpoint Executive buyer confirmed business case but asked for final risk register before signature. Key points: Business case a"
+                    }
+                ],
+                "conflict_or_ambiguity": null
+            },
+            {
+                "theme": "gong",
+                "finding": "Renewal kickoff and regional rollout review Northstar confirmed renewal intent while asking for a clearer rollout model across regional plants. Key points: Executive buyer wants fewer exceptions, infrastructure leader asked for migration owners, network lead requested progress dashboards. Risks: Regional exceptions may delay final approval if ownership remai",
+                "confidence": "medium",
+                "citations": [
+                    {
+                        "source": "synthetic_data/gong/gong_call_summaries.tsv",
+                        "stable_source_id": "CALL-001",
+                        "source_type": "gong",
+                        "quote_or_fact": "Renewal kickoff and regional rollout review Northstar confirmed renewal intent while asking for a clearer rollout model across regional plan"
+                    }
+                ],
+                "conflict_or_ambiguity": null
+            }
+        ],
+        "stakeholder_map": [],
+        "negotiation_state": [
+            {
+                "theme": "gong",
+                "finding": "Branch migration planning session Technical team reviewed branch sequencing and requested safeguards for sites with older appliances. Key points: Pilot sites should move first, outage windows must avoid production shifts, reporting needs weekly executive summary. Risks: Older sites may require temporary bypasses that conflict with security goal. Next: Send s",
+                "confidence": "low",
+                "citations": [
+                    {
+                        "source": "synthetic_data/gong/gong_call_summaries.tsv",
+                        "stable_source_id": "CALL-002",
+                        "source_type": "gong",
+                        "quote_or_fact": "Branch migration planning session Technical team reviewed branch sequencing and requested safeguards for sites with older appliances. Key po"
+                    }
+                ],
+                "conflict_or_ambiguity": "Needs human review"
+            },
+            {
+                "theme": "pricing",
+                "finding": "{\"pricing_note_id\":\"PN-4002\",\"opportunity_id\":\"OPP-1001\",\"current_acv\":3900000,\"proposed_acv\":4217500,\"requested_discount\":0,\"renewal_uplift\":8,\"commercial_risk\":\"low\",\"approval_status\":\"not_required\",\"pricing_notes\":\"No new concession requested in final document review, legal language remains the only open issue.\"}",
+                "confidence": "medium",
+                "citations": [
+                    {
+                        "source": "synthetic_data/pricing/pricing_notes.tsv",
+                        "stable_source_id": "PN-4002",
+                        "source_type": "pricing",
+                        "quote_or_fact": "{\"pricing_note_id\":\"PN-4002\",\"opportunity_id\":\"OPP-1001\",\"current_acv\":3900000,\"proposed_acv\":4217500,\"requested_discount\":0,\"renewal_uplift"
+                    }
+                ],
+                "conflict_or_ambiguity": null
+            }
+        ],
+        "recommended_next_actions": [
+            {
+                "id": "REC-1",
+                "action": "Share the outcome metrics template with the buyer to align on measurable security outcomes and reduce price pressure risk. Clarify legal dependencies and send the final risk register to the executive buyer to facilitate approval. Provide a clearer regional rollout model addressing ownership and exceptions to avoid delays. Review branch migration safeguards with technical team for older appliances and confirm outage windows. Confirm no new concessions or discounts are requested and finalize legal language.",
+                "owner": "Maya Levin",
+                "rationale": "The buyer linked renewal to measurable security outcomes and requested quarterly success metrics and dashboards, indicating the need toshare outcome metrics templates to mitigate price pressure risk. The executive buyer accepted the business case but requires a final risk register including legal dependencies for signature. Regional rollout clarity and ownership are needed to prevent approval delays. Branch migration planning requires safeguards for older sites to avoid conflicts with security goals. Pricing notes confirm no new concessions or discounts requested, with legal language as the only open issue.",
+                "confidence": "medium",
+                "approval_required": true,
+                "approval_types": [
+                    "legal"
+                ],
+                "customer_facing_allowed": false,
+                "citations": [
+                    {
+                        "source": "synthetic_data/gong/gong_call_summaries.tsv",
+                        "stable_source_id": "CALL-003",
+                        "source_type": "gong",
+                        "quote_or_fact": "Security outcomes alignment Buyer linked renewal to measurable reduction in unmanaged access and cloud policy drift. Key points: CISO wants quarterly success metrics, network lead wants dashboard exports, competitor mentioned as cheaper but less integrated."
+                    },
+                    {
+                        "source": "synthetic_data/gong/gong_call_summaries.tsv",
+                        "stable_source_id": "CALL-005",
+                        "source_type": "gong",
+                        "quote_or_fact": "Executive checkpoint Executive buyer confirmed business case but asked for final risk register before signature. Key points: Business case accepted, legal not fully closed, buyer wants single escalation owner."
+                    },
+                    {
+                        "source": "synthetic_data/gong/gong_call_summaries.tsv",
+                        "stable_source_id": "CALL-001",
+                        "source_type": "gong",
+                        "quote_or_fact": "Renewal kickoff and regional rollout review Northstar confirmed renewal intent while asking for a clearer rollout model across regional plants. Key points: Executive buyer wants fewer exceptions, infrastructure leader asked for migration owners, network lead requested progress dashboards."
+                    },
+                    {
+                        "source": "synthetic_data/gong/gong_call_summaries.tsv",
+                        "stable_source_id": "CALL-002",
+                        "source_type": "gong",
+                        "quote_or_fact": "Branch migration planning session Technical team reviewed branch sequencing and requested safeguards for sites with older appliances. Key points: Pilot sites should move first, outage windows must avoid production shifts, reporting needs weekly executive summary."
+                    },
+                    {
+                        "source": "synthetic_data/pricing/pricing_notes.tsv",
+                        "stable_source_id": "PN-4002",
+                        "source_type": "pricing",
+                        "quote_or_fact": "No new concession requested in final document review, legal language remains the only open issue."
+                    }
+                ],
+                "approval_status": "pending_approval"
+            }
+        ],
+        "missing_information": [
+            "Confirm all open approval states",
+            "Validate unresolved technical or legal items before customer-facing language",
+            "Populate stakeholder map from DB-backed contact repository in the next production increment"
+        ],
+        "source_evidence": [
+            {
+                "source_file": "database:opportunities",
+                "stable_source_id": "OPP-1001",
+                "source_type": "salesforce",
+                "source_access_level": "standard",
+                "content": "CRM opportunity row",
+                "metadata": {
+                    "account_id": "ACC-2001",
+                    "stage": "6.0 Order Review",
+                    "risk_level": "medium"
+                }
+            },
+            {
+                "source_file": "synthetic_data/policies/deal_desk_policy.md",
+                "stable_source_id": "DEAL-DESK-POLICY",
+                "source_type": "policies",
+                "source_access_level": "standard",
+                "content": "Approval routing policy",
+                "metadata": {}
+            },
+            {
+                "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
+                "stable_source_id": "CALL-003",
+                "source_type": "gong",
+                "source_access_level": "standard",
+                "content": "Security outcomes alignment\nBuyer linked renewal to measurable reduction in unmanaged access and cloud policy drift.\nKey points: CISO wants quarterly success metrics, network lead wants dashboard exports, competitor mentioned as cheaper but less integrated.\nRisks: Price pressure could increase if outcomes are not quantified.\nNext: Share outcome metrics template and baseline assumptions.",
+                "metadata": {
+                    "risks": "Price pressure could increase if outcomes are not quantified.",
+                    "title": "Security outcomes alignment",
+                    "call_id": "CALL-003",
+                    "summary": "Buyer linked renewal to measurable reduction in unmanaged access and cloud policy drift.",
+                    "duration": "37:49",
+                    "call_date": "2026-03-25",
+                    "account_id": "ACC-2001",
+                    "key_points": "CISO wants quarterly success metrics, network lead wants dashboard exports, competitor mentioned as cheaper but less integrated.",
+                    "next_steps": "Share outcome metrics template and baseline assumptions.",
+                    "participants": "CON-3001, CON-3004",
+                    "stage_at_call": "5.0 Negotiate",
+                    "opportunity_id": "OPP-1001",
+                    "customer_sentiment": "positive",
+                    "source_access_level": "standard"
+                }
+            },
+            {
+                "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
+                "stable_source_id": "CALL-005",
+                "source_type": "gong",
+                "source_access_level": "standard",
+                "content": "Executive checkpoint\nExecutive buyer confirmed business case but asked for final risk register before signature.\nKey points: Business case accepted, legal not fully closed, buyer wants single escalation owner.\nRisks: Final risk register may be too vague for executive approval if legal dependency is omitted.\nNext: Clarify legal dependency and send final risk register.",
+                "metadata": {
+                    "risks": "Final risk register may be too vague for executive approval if legal dependency is omitted.",
+                    "title": "Executive checkpoint",
+                    "call_id": "CALL-005",
+                    "summary": "Executive buyer confirmed business case but asked for final risk register before signature.",
+                    "duration": "29:35",
+                    "call_date": "2026-04-08",
+                    "account_id": "ACC-2001",
+                    "key_points": "Business case accepted, legal not fully closed, buyer wants single escalation owner.",
+                    "next_steps": "Clarify legal dependency and send final risk register.",
+                    "participants": "CON-3001, CON-3005",
+                    "stage_at_call": "6.0 Order Review",
+                    "opportunity_id": "OPP-1001",
+                    "customer_sentiment": "cautiously_positive",
+                    "source_access_level": "standard"
+                }
+            },
+            {
+                "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
+                "stable_source_id": "CALL-001",
+                "source_type": "gong",
+                "source_access_level": "standard",
+                "content": "Renewal kickoff and regional rollout review\nNorthstar confirmed renewal intent while asking for a clearer rollout model across regional plants.\nKey points: Executive buyer wants fewer exceptions, infrastructure leader asked for migration owners, network lead requested progress dashboards.\nRisks: Regional exceptions may delay final approval if ownership remains unclear.\nNext: Prepare rollout owner matrix and exception reduction timeline.",
+                "metadata": {
+                    "risks": "Regional exceptions may delay final approval if ownership remains unclear.",
+                    "title": "Renewal kickoff and regional rollout review",
+                    "call_id": "CALL-001",
+                    "summary": "Northstar confirmed renewal intent while asking for a clearer rollout model across regional plants.",
+                    "duration": "42:18",
+                    "call_date": "2026-03-11",
+                    "account_id": "ACC-2001",
+                    "key_points": "Executive buyer wants fewer exceptions, infrastructure leader asked for migration owners, network lead requested progress dashboards.",
+                    "next_steps": "Prepare rollout owner matrix and exception reduction timeline.",
+                    "participants": "CON-3001, CON-3002, CON-3004",
+                    "stage_at_call": "5.0 Negotiate",
+                    "opportunity_id": "OPP-1001",
+                    "customer_sentiment": "cautiously_positive",
+                    "source_access_level": "standard"
+                }
+            },
+            {
+                "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
+                "stable_source_id": "CALL-002",
+                "source_type": "gong",
+                "source_access_level": "standard",
+                "content": "Branch migration planning session\nTechnical team reviewed branch sequencing and requested safeguards for sites with older appliances.\nKey points: Pilot sites should move first, outage windows must avoid production shifts, reporting needs weekly executive summary.\nRisks: Older sites may require temporary bypasses that conflict with security goal.\nNext: Send site sequencing draft and exception policy.",
+                "metadata": {
+                    "risks": "Older sites may require temporary bypasses that conflict with security goal.",
+                    "title": "Branch migration planning session",
+                    "call_id": "CALL-002",
+                    "summary": "Technical team reviewed branch sequencing and requested safeguards for sites with older appliances.",
+                    "duration": "55:04",
+                    "call_date": "2026-03-18",
+                    "account_id": "ACC-2001",
+                    "key_points": "Pilot sites should move first, outage windows must avoid production shifts, reporting needs weekly executive summary.",
+                    "next_steps": "Send site sequencing draft and exception policy.",
+                    "participants": "CON-3002, CON-3004",
+                    "stage_at_call": "5.0 Negotiate",
+                    "opportunity_id": "OPP-1001",
+                    "customer_sentiment": "positive",
+                    "source_access_level": "standard"
+                }
+            },
+            {
+                "source_file": "synthetic_data/pricing/pricing_notes.tsv",
+                "stable_source_id": "PN-4002",
+                "source_type": "pricing",
+                "source_access_level": "standard",
+                "content": "{\"pricing_note_id\":\"PN-4002\",\"opportunity_id\":\"OPP-1001\",\"current_acv\":3900000,\"proposed_acv\":4217500,\"requested_discount\":0,\"renewal_uplift\":8,\"commercial_risk\":\"low\",\"approval_status\":\"not_required\",\"pricing_notes\":\"No new concession requested in final document review, legal language remains the only open issue.\"}",
+                "metadata": {
+                    "current_acv": 3900000,
+                    "proposed_acv": 4217500,
+                    "pricing_notes": "No new concession requested in final document review, legal language remains the only open issue.",
+                    "opportunity_id": "OPP-1001",
+                    "renewal_uplift": 8,
+                    "approval_status": "not_required",
+                    "commercial_risk": "low",
+                    "pricing_note_id": "PN-4002",
+                    "requested_discount": 0
+                }
+            },
+            {
+                "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
+                "stable_source_id": "CALL-004",
+                "source_type": "gong",
+                "source_access_level": "standard",
+                "content": "Procurement commercial review\nProcurement challenged the uplift and legal asked for narrower liability wording.\nKey points: Payment schedule requested, liability clause needs redline response, renewal still targeted for May.\nRisks: Legal language and payment terms may push order review later.\nNext: Route contract redline to legal and provide payment options.",
+                "metadata": {
+                    "risks": "Legal language and payment terms may push order review later.",
+                    "title": "Procurement commercial review",
+                    "call_id": "CALL-004",
+                    "summary": "Procurement challenged the uplift and legal asked for narrower liability wording.",
+                    "duration": "48:26",
+                    "call_date": "2026-04-01",
+                    "account_id": "ACC-2001",
+                    "key_points": "Payment schedule requested, liability clause needs redline response, renewal still targeted for May.",
+                    "next_steps": "Route contract redline to legal and provide payment options.",
+                    "participants": "CON-3003, CON-3005",
+                    "stage_at_call": "5.0 Negotiate",
+                    "opportunity_id": "OPP-1001",
+                    "customer_sentiment": "neutral",
+                    "source_access_level": "standard"
+                }
+            },
+            {
+                "source_file": "synthetic_data/salesforce/opportunities.tsv",
+                "stable_source_id": "OPP-1001",
+                "source_type": "salesforce",
+                "source_access_level": "standard",
+                "content": "{\"opportunity_id\":\"OPP-1001\",\"opportunity_name\":\"Northstar Foods Cooperative - Global Access Renewal\",\"account_id\":\"ACC-2001\",\"account_name\":\"Northstar Foods Cooperative\",\"stage\":\"6.0 Order Review\",\"type\":\"Renewal\",\"region\":\"EMEA\",\"country\":\"Ireland\",\"industry\":\"Food and beverage operations\",\"owner\":\"Maya Levin\",\"close_date\":\"2026-05-17\",\"acv\":4217500,\"tcv\":12652500,\"renewal_term_months\":36,\"probability\":78,\"forecast_category\":\"Commit\",\"next_step\":\"Send revised order form and migration success plan by 2026-04-28\",\"primary_competitor\":\"LegacyNet Shield\",\"risk_level\":\"medium\",\"approval_required\":false,\"restricted_access\":false}",
+                "metadata": {
+                    "acv": 4217500,
+                    "tcv": 12652500,
+                    "type": "Renewal",
+                    "owner": "Maya Levin",
+                    "stage": "6.0 Order Review",
+                    "region": "EMEA",
+                    "country": "Ireland",
+                    "industry": "Food and beverage operations",
+                    "next_step": "Send revised order form and migration success plan by 2026-04-28",
+                    "account_id": "ACC-2001",
+                    "close_date": "2026-05-17",
+                    "risk_level": "medium",
+                    "probability": 78,
+                    "account_name": "Northstar Foods Cooperative",
+                    "opportunity_id": "OPP-1001",
+                    "opportunity_name": "Northstar Foods Cooperative - Global Access Renewal",
+                    "approval_required": false,
+                    "forecast_category": "Commit",
+                    "restricted_access": false,
+                    "primary_competitor": "LegacyNet Shield",
+                    "renewal_term_months": 36
+                }
+            },
+            {
+                "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
+                "stable_source_id": "CALL-006",
+                "source_type": "gong",
+                "source_access_level": "standard",
+                "content": "Operational readiness workshop\nOperations reviewedmigration playbook and validated support path for plant cutovers.\nKey points: Support bridge requested, rollback plan accepted, weekly dashboard remains open.\nRisks: If dashboards are late, buyer may hold back signature until final week.\nNext: Deliver dashboard mock and support bridge schedule.",
+                "metadata": {
+                    "risks": "If dashboards are late, buyer may hold back signature until final week.",
+                    "title": "Operational readiness workshop",
+                    "call_id": "CALL-006",
+                    "summary": "Operations reviewed migration playbook and validated support path for plant cutovers.",
+                    "duration": "63:12",
+                    "call_date": "2026-04-12",
+                    "account_id": "ACC-2001",
+                    "key_points": "Support bridge requested, rollback plan accepted, weekly dashboard remains open.",
+                    "next_steps": "Deliver dashboard mock and support bridge schedule.",
+                    "participants": "CON-3002, CON-3004",
+                    "stage_at_call": "6.0 Order Review",
+                    "opportunity_id": "OPP-1001",
+                    "customer_sentiment": "positive",
+                    "source_access_level": "standard"
+                }
+            }
+        ],
+        "confidence_and_review_warnings": [
+            "Some recommendations are internal-only until human approval is completed.",
+            "Conflicting or low-confidence evidence detected; route to reviewer."
+        ],
+        "llm_usage_mode": "live_model_after_permission_filtered_retrieval",
+        "trace": [
+            {
+                "ts": 1782029269.3329666,
+                "run_id": "run-471c397f63e6",
+                "event_type": "workflow.start",
+                "actor": "brief_workflow",
+                "payload": {
+                    "user_id": "USR-5001",
+                    "opportunity_id": "OPP-1001"
+                }
+            },
+            {
+                "ts": 1782029269.3610172,
+                "run_id": "run-471c397f63e6",
+                "event_type": "agent.invoke.start",
+                "actor": "conversation_intelligence_agent",
+                "payload": {
+                    "input_keys": [
+                        "user_id",
+                        "opportunity_id"
+                    ]
+                }
+            },
+            {
+                "ts": 1782029275.3174763,
+                "run_id": "run-471c397f63e6",
+                "event_type": "llm.extraction.complete",
+                "actor": "conversation_intelligence_agent",
+                "payload": {
+                    "model": "gpt-4.1-nano",
+                    "total_tokens": 1711,
+                    "offline": true
+                }
+            },
+            {
+                "ts": 1782029275.3177154,
+                "run_id": "run-471c397f63e6",
+                "event_type": "agent.invoke.success",
+                "actor": "conversation_intelligence_agent",
+                "payload": {
+                    "input_keys": [
+                        "user_id",
+                        "opportunity_id"
+                    ]
+                }
+            },
+            {
+                "ts": 1782029275.3178313,
+                "run_id": "run-471c397f63e6",
+                "event_type": "agent.invoke.start",
+                "actor": "negotiation_strategy_agent",
+                "payload": {
+                    "input_keys": [
+                        "snapshot",
+                        "findings"
+                    ]
+                }
+            },
+            {
+                "ts": 1782029281.4534924,
+                "run_id": "run-471c397f63e6",
+                "event_type": "llm.negotiation_strategy.complete",
+                "actor": "negotiation_strategy_agent",
+                "payload": {
+                    "model": "gpt-4.1-mini",
+                    "total_tokens": 1876,
+                    "offline": false
+                }
+            },
+            {
+                "ts": 1782029281.4537308,
+                "run_id": "run-471c397f63e6",
+                "event_type": "agent.negotiation_strategy.complete",
+                "actor": "negotiation_strategy_agent",
+                "payload": {
+                    "opportunity_id": "OPP-1001",
+                    "recommendations": 1
+                }
+            },
+            {
+                "ts": 1782029281.4538329,
+                "run_id": "run-471c397f63e6",
+                "event_type": "agent.invoke.success",
+                "actor": "negotiation_strategy_agent",
+                "payload": {
+                    "input_keys": [
+                        "snapshot",
+                        "findings"
+                    ]
+                }
+            },
+            {
+                "ts": 1782029281.4679942,
+                "run_id": "run-471c397f63e6",
+                "event_type": "workflow.cost_metrics",
+                "actor": "budget_enforcement",
+                "payload": {
+                    "total_cost_usd": 0.0020159,
+                    "budget_limit_usd": 0.05,
+                    "budget_remaining_usd": 0.0479841,
+                    "budget_breached": false,
+                    "calls": [
+                        {
+                            "model_name": "gpt-4.1-nano",
+                            "prompt_tokens": 811,
+                            "completion_tokens": 900,
+                            "total_tokens": 1711,
+                            "estimated_cost_usd": 0.00044110000000000004
+                        },
+                        {
+                            "model_name": "gpt-4.1-mini",
+                            "prompt_tokens": 1189,
+                            "completion_tokens": 687,
+                            "total_tokens": 1876,
+                            "estimated_cost_usd": 0.0015748000000000001
+                        }
+                    ]
+                }
+            },
+            {
+                "ts": 1782029281.468079,
+                "run_id": "run-471c397f63e6",
+                "event_type": "workflow.complete",
+                "actor": "brief_workflow",
+                "payload": {
+                    "recommendations": 1,
+                    "evidence": 10,
+                    "total_cost_usd": 0.0020159,
+                    "budget_limit_usd": 0.05,
+                    "budget_breached": false
+                }
+            }
+        ]
     },
-    {
-      "theme": "gong",
-      "finding": "Renewal document review Final document review found no new commercial objections, but legal asked for confirmation that retention language matches policy. Key points: No new discount request, legal review nearly complete, procurement expects signature package next. Risks: Policy citation must be accurate or legal may reopen redlines. Next: Attach approved da",
-      "confidence": "medium",
-      "citations": [
-        {
-          "source": "synthetic_data/gong/gong_call_summaries.tsv",
-          "stable_source_id": "CALL-009",
-          "source_type": "gong",
-          "quote_or_fact": "Renewal document review Final document review found no new commercial objections, but legal asked for confirmation that retention language m"
-        }
-      ],
-      "conflict_or_ambiguity": null
-    },
-    {
-      "theme": "gong",
-      "finding": "Executive checkpoint Executive buyer confirmed business case but asked for final risk register before signature. Key points: Business case accepted, legal not fully closed, buyer wants single escalation owner. Risks: Final risk register may be too vague for executive approval if legal dependency is omitted. Next: Clarify legal dependency and send final risk ",
-      "confidence": "medium",
-      "citations": [
-        {
-          "source": "synthetic_data/gong/gong_call_summaries.tsv",
-          "stable_source_id": "CALL-005",
-          "source_type": "gong",
-          "quote_or_fact": "Executive checkpoint Executive buyer confirmed business case but asked for final risk register before signature. Key points: Business case a"
-        }
-      ],
-      "conflict_or_ambiguity": null
-    }
-  ],
-  "stakeholder_map": [
-    {
-      "name": "Elena Voss",
-      "title": "Chief Information Security Officer",
-      "role_in_deal": "Economic buyer",
-      "influence_level": "high",
-      "sentiment": "cautiously_positive",
-      "notes": "Wants a clean renewal path but will not support expansion unless regional exception handling is reduced.",
-      "citations": [
-        {
-          "source": "synthetic_data/salesforce/contacts.tsv",
-          "stable_source_id": "CON-3001",
-          "source_type": "salesforce",
-          "quote_or_fact": "Contact row"
-        }
-      ]
-    },
-    {
-      "name": "Marco Devlin",
-      "title": "VP Infrastructure",
-      "role_in_deal": "Technical decision maker",
-      "influence_level": "high",
-      "sentiment": "positive",
-      "notes": "Owns branch migration plan and wants named escalation owners for rollout.",
-      "citations": [
-        {
-          "source": "synthetic_data/salesforce/contacts.tsv",
-          "stable_source_id": "CON-3002",
-          "source_type": "salesforce",
-          "quote_or_fact": "Contact row"
-        }
-      ]
-    },
-    {
-      "name": "Iris Calder",
-      "title": "Procurement Director",
-      "role_in_deal": "Commercial approver",
-      "influence_level": "medium",
-      "sentiment": "neutral",
-      "notes": "Focused on renewal uplift, payment schedule, and keeping final order form simple.",
-      "citations": [
-        {
-          "source": "synthetic_data/salesforce/contacts.tsv",
-          "stable_source_id": "CON-3003",
-          "source_type": "salesforce",
-          "quote_or_fact": "Contact row"
-        }
-      ]
-    },
-    {
-      "name": "Pavel Stone",
-      "title": "Global Network Lead",
-      "role_in_deal": "Technical evaluator",
-      "influence_level": "medium",
-      "sentiment": "positive",
-      "notes": "Advocates for reducing bypass exceptions but needs reporting on migration progress.",
-      "citations": [
-        {
-          "source": "synthetic_data/salesforce/contacts.tsv",
-          "stable_source_id": "CON-3004",
-          "source_type": "salesforce",
-          "quote_or_fact": "Contact row"
-        }
-      ]
-    },
-    {
-      "name": "Amara Quinn",
-      "title": "Legal Counsel",
-      "role_in_deal": "Legal reviewer",
-      "influence_level": "medium",
-      "sentiment": "neutral",
-      "notes": "Reviewing liability language and data processing addendum.",
-      "citations": [
-        {
-          "source": "synthetic_data/salesforce/contacts.tsv",
-          "stable_source_id": "CON-3005",
-          "source_type": "salesforce",
-          "quote_or_fact": "Contact row"
-        }
-      ]
-    }
-  ],
-  "negotiation_state": [
-    {
-      "theme": "gong",
-      "finding": "Renewal kickoff and regional rollout review Northstar confirmed renewal intent while asking for a clearer rollout model across regional plants. Key points: Executive buyer wants fewer exceptions, infrastructure leader asked for migration owners, network lead requested progress dashboards. Risks: Regional exceptions may delay final approval if ownership remai",
-      "confidence": "medium",
-      "citations": [
-        {
-          "source": "synthetic_data/gong/gong_call_summaries.tsv",
-          "stable_source_id": "CALL-001",
-          "source_type": "gong",
-          "quote_or_fact": "Renewal kickoff and regional rollout review Northstar confirmed renewal intent while asking for a clearer rollout model across regional plan"
-        }
-      ],
-      "conflict_or_ambiguity": null
-    },
-    {
-      "theme": "salesforce",
-      "finding": "{\"contact_id\":\"CON-3001\",\"account_id\":\"ACC-2001\",\"full_name\":\"Elena Voss\",\"title\":\"Chief Information Security Officer\",\"role_in_deal\":\"Economic buyer\",\"email\":\"elena.voss@northstar-foods.example\",\"phone\":\"+000-0100-3001\",\"location\":\"Dublin\",\"influence_level\":\"high\",\"sentiment\":\"cautiously_positive\",\"last_interaction_date\":\"2026-04-18\",\"notes\":\"Wants a clean ",
-      "confidence": "medium",
-      "citations": [
-        {
-          "source": "synthetic_data/salesforce/contacts.tsv",
-          "stable_source_id": "ACC-2001",
-          "source_type": "salesforce",
-          "quote_or_fact": "{\"contact_id\":\"CON-3001\",\"account_id\":\"ACC-2001\",\"full_name\":\"Elena Voss\",\"title\":\"Chief Information Security Officer\",\"role_in_deal\":\"Econo"
-        }
-      ],
-      "conflict_or_ambiguity": null
-    }
-  ],
-  "recommended_next_actions": [
-    {
-      "id": "REC-1",
-      "action": "Complete the evidence packet and keep recommendations tied to cited proof, not assumptions.",
-      "owner": "Account Owner",
-      "rationale": "Derived from retrieved evidence and policy guardrails.",
-      "confidence": "medium",
-      "approval_required": false,
-      "approval_types": [],
-      "customer_facing_allowed": true,
-      "citations": [
-        {
-          "source": "synthetic_data/gong/gong_call_summaries.tsv",
-          "stable_source_id": "CALL-003",
-          "source_type": "gong",
-          "quote_or_fact": "Security outcomes alignment Buyer linked renewal to measurable reduction in unmanaged access and cloud policy drift. Key points: CISO wants "
-        }
-      ]
-    },
-    {
-      "id": "REC-2",
-      "action": "Resolve missing information before asking for signature or commercial approval.",
-      "owner": "Customer Success",
-      "rationale": "Derived from retrieved evidence and policy guardrails.",
-      "confidence": "medium",
-      "approval_required": false,
-      "approval_types": [],
-      "customer_facing_allowed": true,
-      "citations": [
-        {
-          "source": "synthetic_data/gong/gong_call_summaries.tsv",
-          "stable_source_id": "CALL-003",
-          "source_type": "gong",
-          "quote_or_fact": "Security outcomes alignment Buyer linked renewal to measurable reduction in unmanaged access and cloud policy drift. Key points: CISO wants "
-        }
-      ]
-    }
-  ],
-  "missing_information": [
-    "Confirm all open approval states",
-    "Validate unresolved technical or legal items before customer-facing language"
-  ],
-  "source_evidence": [
-    {
-      "stable_source_id": "CALL-003",
-      "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
-      "source_type": "gong",
-      "opportunity_id": "OPP-1001",
-      "account_id": "ACC-2001",
-      "source_access_level": "standard",
-      "content": "Security outcomes alignment\nBuyer linked renewal to measurable reduction in unmanaged access and cloud policy drift.\nKey points: CISO wants quarterly success metrics, network lead wants dashboard exports, competitor mentioned as cheaper but less integrated.\nRisks: Price pressure could increase if outcomes are not quantified.\nNext: Share outcome metrics template and baseline assumptions.",
-      "metadata": {
-        "call_id": "CALL-003",
-        "opportunity_id": "OPP-1001",
-        "account_id": "ACC-2001",
-        "call_date": "2026-03-25",
-        "title": "Security outcomes alignment",
-        "duration": "37:49",
-        "stage_at_call": "5.0 Negotiate",
-        "participants": "CON-3001, CON-3004",
-        "summary": "Buyer linked renewal to measurable reduction in unmanaged access and cloud policy drift.",
-        "key_points": "CISO wants quarterly success metrics, network lead wants dashboard exports, competitor mentioned as cheaper but less integrated.",
-        "customer_sentiment": "positive",
-        "risks": "Price pressure could increase if outcomes are not quantified.",
-        "next_steps": "Share outcome metrics template and baseline assumptions.",
-        "source_access_level": "standard"
-      },
-      "score": 4.8516,
-      "keyword_score": 8.77,
-      "semantic_score": 0.0702
-    },
-    {
-      "stable_source_id": "CALL-009",
-      "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
-      "source_type": "gong",
-      "opportunity_id": "OPP-1001",
-      "account_id": "ACC-2001",
-      "source_access_level": "standard",
-      "content": "Renewal document review\nFinal document review found no new commercial objections, but legal asked for confirmation that retention language matches policy.\nKey points: No new discount request, legal review nearly complete, procurement expects signature package next.\nRisks: Policy citation must be accurate or legal may reopen redlines.\nNext: Attach approved data-retention policy excerpt and signature checklist.",
-      "metadata": {
-        "call_id": "CALL-009",
-        "opportunity_id": "OPP-1001",
-        "account_id": "ACC-2001",
-        "call_date": "2026-04-24",
-        "title": "Renewal document review",
-        "duration": "31:44",
-        "stage_at_call": "6.0 Order Review",
-        "participants": "CON-3003, CON-3005",
-        "summary": "Final document review found no new commercial objections, but legal asked for confirmation that retention language matches policy.",
-        "key_points": "No new discount request, legal review nearly complete, procurement expects signature package next.",
-        "customer_sentiment": "positive",
-        "risks": "Policy citation must be accurate or legal may reopen redlines.",
-        "next_steps": "Attach approved data-retention policy excerpt and signature checklist.",
-        "source_access_level": "standard"
-      },
-      "score": 4.4221,
-      "keyword_score": 7.9999,
-      "semantic_score": 0.0556
-    },
-    {
-      "stable_source_id": "CALL-005",
-      "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
-      "source_type": "gong",
-      "opportunity_id": "OPP-1001",
-      "account_id": "ACC-2001",
-      "source_access_level": "standard",
-      "content": "Executive checkpoint\nExecutive buyer confirmed business case but asked for final risk register before signature.\nKey points: Business case accepted, legal not fully closed, buyer wants single escalation owner.\nRisks: Final risk register may be too vague for executive approval if legal dependency is omitted.\nNext: Clarify legal dependency and send final risk register.",
-      "metadata": {
-        "call_id": "CALL-005",
-        "opportunity_id": "OPP-1001",
-        "account_id": "ACC-2001",
-        "call_date": "2026-04-08",
-        "title": "Executive checkpoint",
-        "duration": "29:35",
-        "stage_at_call": "6.0 Order Review",
-        "participants": "CON-3001, CON-3005",
-        "summary": "Executive buyer confirmed business case but asked for final risk register before signature.",
-        "key_points": "Business case accepted, legal not fully closed, buyer wants single escalation owner.",
-        "customer_sentiment": "cautiously_positive",
-        "risks": "Final risk register may be too vague for executive approval if legal dependency is omitted.",
-        "next_steps": "Clarify legal dependency and send final risk register.",
-        "source_access_level": "standard"
-      },
-      "score": 4.0716,
-      "keyword_score": 7.341,
-      "semantic_score": 0.0851
-    },
-    {
-      "stable_source_id": "CALL-001",
-      "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
-      "source_type": "gong",
-      "opportunity_id": "OPP-1001",
-      "account_id": "ACC-2001",
-      "source_access_level": "standard",
-      "content": "Renewal kickoff and regional rollout review\nNorthstar confirmed renewal intent while asking for a clearer rollout model across regional plants.\nKey points: Executive buyer wants fewer exceptions, infrastructure leader asked for migration owners, network lead requested progress dashboards.\nRisks: Regional exceptions may delay final approval if ownership remains unclear.\nNext: Prepare rollout owner matrix and exception reduction timeline.",
-      "metadata": {
-        "call_id": "CALL-001",
-        "opportunity_id": "OPP-1001",
-        "account_id": "ACC-2001",
-        "call_date": "2026-03-11",
-        "title": "Renewal kickoff and regional rollout review",
-        "duration": "42:18",
-        "stage_at_call": "5.0 Negotiate",
-        "participants": "CON-3001, CON-3002, CON-3004",
-        "summary": "Northstar confirmed renewal intent while asking for a clearer rollout model across regional plants.",
-        "key_points": "Executive buyer wants fewer exceptions, infrastructure leader asked for migration owners, network lead requested progress dashboards.",
-        "customer_sentiment": "cautiously_positive",
-        "risks": "Regional exceptions may delay final approval if ownership remains unclear.",
-        "next_steps": "Prepare rollout owner matrix and exception reduction timeline.",
-        "source_access_level": "standard"
-      },
-      "score": 3.6086,
-      "keyword_score": 6.5109,
-      "semantic_score": 0.069
-    },
-    {
-      "stable_source_id": "ACC-2001",
-      "source_file": "synthetic_data/salesforce/contacts.tsv",
-      "source_type": "salesforce",
-      "opportunity_id": null,
-      "account_id": "ACC-2001",
-      "source_access_level": "standard",
-      "content": "{\"contact_id\":\"CON-3001\",\"account_id\":\"ACC-2001\",\"full_name\":\"Elena Voss\",\"title\":\"Chief Information Security Officer\",\"role_in_deal\":\"Economic buyer\",\"email\":\"elena.voss@northstar-foods.example\",\"phone\":\"+000-0100-3001\",\"location\":\"Dublin\",\"influence_level\":\"high\",\"sentiment\":\"cautiously_positive\",\"last_interaction_date\":\"2026-04-18\",\"notes\":\"Wants a clean renewal path but will not support expansion unless regional exception handling is reduced.\"}",
-      "metadata": {
-        "contact_id": "CON-3001",
-        "account_id": "ACC-2001",
-        "full_name": "Elena Voss",
-        "title": "Chief Information Security Officer",
-        "role_in_deal": "Economic buyer",
-        "email": "elena.voss@northstar-foods.example",
-        "phone": "+000-0100-3001",
-        "location": "Dublin",
-        "influence_level": "high",
-        "sentiment": "cautiously_positive",
-        "last_interaction_date": "2026-04-18",
-        "notes": "Wants a clean renewal path but will not support expansion unless regional exception handling is reduced."
-      },
-      "score": 3.494,
-      "keyword_score": 6.2354,
-      "semantic_score": 0.0364
-    },
-    {
-      "stable_source_id": "CALL-008",
-      "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
-      "source_type": "gong",
-      "opportunity_id": "OPP-1001",
-      "account_id": "ACC-2001",
-      "source_access_level": "standard",
-      "content": "Final pre-signature negotiation prep\nStakeholders aligned on renewal path if vendor provides final owner matrix and success metrics.\nKey points: CISO supports renewal, procurement wants payment schedule in writing, technical owner wants migration success metrics included.\nRisks: Missing payment schedule could become a last-minute blocker.\nNext: Send final brief, owner matrix, and payment schedule by 2026-04-28.",
-      "metadata": {
-        "call_id": "CALL-008",
-        "opportunity_id": "OPP-1001",
-        "account_id": "ACC-2001",
-        "call_date": "2026-04-18",
-        "title": "Final pre-signature negotiation prep",
-        "duration": "46:57",
-        "stage_at_call": "6.0 Order Review",
-        "participants": "CON-3001, CON-3002, CON-3003",
-        "summary": "Stakeholders aligned on renewal path if vendor provides final owner matrix and success metrics.",
-        "key_points": "CISO supports renewal, procurement wants payment schedule in writing, technical owner wants migration success metrics included.",
-        "customer_sentiment": "positive",
-        "risks": "Missing payment schedule could become a last-minute blocker.",
-        "next_steps": "Send final brief, owner matrix, and payment schedule by 2026-04-28.",
-        "source_access_level": "standard"
-      },
-      "score": 3.0789,
-      "keyword_score": 5.4642,
-      "semantic_score": 0.0588
-    },
-    {
-      "stable_source_id": "CALL-006",
-      "source_file": "synthetic_data/gong/gong_call_summaries.tsv",
-      "source_type": "gong",
-      "opportunity_id": "OPP-1001",
-      "account_id": "ACC-2001",
-      "source_access_level": "standard",
-      "content": "Operational readiness workshop\nOperations reviewed migration playbook and validated support path for plant cutovers.\nKey points: Support bridge requested, rollback plan accepted, weekly dashboard remains open.\nRisks: If dashboards are late, buyer may hold back signature until final week.\nNext: Deliver dashboard mock and support bridge schedule.",
-      "metadata": {
-        "call_id": "CALL-006",
-        "opportunity_id": "OPP-1001",
-        "account_id": "ACC-2001",
-        "call_date": "2026-04-12",
-        "title": "Operational readiness workshop",
-        "duration": "63:12",
-        "stage_at_call": "6.0 Order Review",
-        "participants": "CON-3002, CON-3004",
-        "summary": "Operations reviewed migration playbook and validated support path for plant cutovers.",
-        "key_points": "Support bridge requested, rollback plan accepted, weekly dashboard remains open.",
-        "customer_sentiment": "positive",
-        "risks": "If dashboards are late, buyer may hold back signature until final week.",
-        "next_steps": "Deliver dashboard mock and support bridge schedule.",
-        "source_access_level": "standard"
-      },
-      "score": 2.8136,
-      "keyword_score": 5.0729,
-      "semantic_score": 0.0588
-    },
-    {
-      "stable_source_id": "DEAL-DESK-POLICY",
-      "source_file": "synthetic_data/policies/deal_desk_policy.md",
-      "source_type": "policies",
-      "opportunity_id": null,
-      "account_id": null,
-      "source_access_level": "standard",
-      "content": "# Synthetic Deal Desk and Approval Policy\n\nThese rules are fictional and intended only for the AI Engineer exam dataset.\n\n## Approval Rules\n\n1. Discounts greater than 10 percent require Deal Desk approval before they are recommended internally or shared with a customer.\n2. Discounts greater than 15 percent require both Deal Desk and sales leader approval.\n3. Any negative renewal uplift requires Deal Desk approval, even if the percentage discount is below threshold.\n4. Liability cap changes require legal approval before customer-facing language is generated.\n5. Data retention, restricted research data, or customer-specific security language requires legal approval before it is shared externally.\n6. Customer-facing concession language must not be generated unless the recommendation has an approved status.\n7. Low-confidence recommendations, conflicting evidence, or missing source data must be routed to a human reviewer.\n8. Restricted account sources may only be retrieved and summarized for users whose permission profile allows restricted account access.\n9. Sensitive pricing notes may only be shown to users with `can_view_sensitive_pricing=true`.\n10. If source access is denied, the system must not reveal a summary, title, quote, inferred fact, or metadata from the restricted source.\n",
-      "metadata": {},
-      "score": 2.4188,
-      "keyword_score": 4.3865,
-      "semantic_score": 0.0154
-    },
-    {
-      "stable_source_id": "SLACK-9002",
-      "source_file": "synthetic_data/slack/account_team_updates.tsv",
-      "source_type": "slack",
-      "opportunity_id": "OPP-1001",
-      "account_id": "ACC-2001",
-      "source_access_level": "standard",
-      "content": "Missing context: procurement asked that the two-payment schedule be shown as an option, not as an approved commitment, to avoid finance confusion.",
-      "metadata": {
-        "update_id": "SLACK-9002",
-        "opportunity_id": "OPP-1001",
-        "account_id": "ACC-2001",
-        "update_date": "2026-04-22",
-        "channel": "#acct-northstar",
-        "author_role": "Account Executive",
-        "synthetic_notice": "SYNTHETIC: generated for candidate exam",
-        "source_access_level": "standard",
-        "update_text": "Missing context: procurement asked that the two-payment schedule be shown as an option, not as an approved commitment, to avoid finance confusion."
-      },
-      "score": 4.602,
-      "keyword_score": 8.0408,
-      "semantic_score": 0.0741
-    },
-    {
-      "stable_source_id": "SLACK-9001",
-      "source_file": "synthetic_data/slack/account_team_updates.tsv",
-      "source_type": "slack",
-      "opportunity_id": "OPP-1001",
-      "account_id": "ACC-2001",
-      "source_access_level": "standard",
-      "content": "Reinforces CALL-008: owner matrix still needs named accountable groups for two regions, but customer sentiment remains constructive if packet arrives as one clean package.",
-      "metadata": {
-        "update_id": "SLACK-9001",
-        "opportunity_id": "OPP-1001",
-        "account_id": "ACC-2001",
-        "update_date": "2026-04-21",
-        "channel": "#acct-northstar",
-        "author_role": "Customer Success",
-        "synthetic_notice": "SYNTHETIC: generated for candidate exam",
-        "source_access_level": "standard",
-        "update_text": "Reinforces CALL-008: owner matrix still needs named accountable groups for two regions, but customer sentiment remains constructive if packet arrives as one clean package."
-      },
-      "score": 3.0931,
-      "keyword_score": 5.3283,
-      "semantic_score": 0.0312
-    }
-  ],
-  "confidence_and_review_warnings": [],
-  "trace": [
-    {
-      "ts": 1781699377.5216565,
-      "run_id": "run-9d6f4ddf5959",
-      "event_type": "workflow.start",
-      "actor": "brief_workflow",
-      "payload": {
+    "metadata": {
+        "brief_id": "BRF-437b24f3d2b3",
+        "run_id": "run-471c397f63e6",
         "user_id": "USR-5001",
-        "opportunity_id": "OPP-1001"
-      }
-    },
-    {
-      "ts": 1781699377.523507,
-      "run_id": "run-9d6f4ddf5959",
-      "event_type": "agent.invoke.start",
-      "actor": "deal_context_agent",
-      "payload": {
-        "input_keys": [
-          "opportunity_id"
-        ]
-      }
-    },
-    {
-      "ts": 1781699377.5280323,
-      "run_id": "run-9d6f4ddf5959",
-      "event_type": "agent.invoke.success",
-      "actor": "deal_context_agent",
-      "payload": {
-        "input_keys": [
-          "opportunity_id"
-        ]
-      }
-    },
-    {
-      "ts": 1781699377.5281336,
-      "run_id": "run-9d6f4ddf5959",
-      "event_type": "agent.invoke.start",
-      "actor": "conversation_intelligence_agent",
-      "payload": {
-        "input_keys": [
-          "user_id",
-          "opportunity_id"
-        ]
-      }
-    },
-    {
-      "ts": 1781699377.6001537,
-      "run_id": "run-9d6f4ddf5959",
-      "event_type": "agent.invoke.success",
-      "actor": "conversation_intelligence_agent",
-      "payload": {
-        "input_keys": [
-          "user_id",
-          "opportunity_id"
-        ]
-      }
-    },
-    {
-      "ts": 1781699377.6002057,
-      "run_id": "run-9d6f4ddf5959",
-      "event_type": "agent.invoke.start",
-      "actor": "stakeholder_map_agent",
-      "payload": {
-        "input_keys": [
-          "opportunity_id"
-        ]
-      }
-    },
-    {
-      "ts": 1781699377.6093068,
-      "run_id": "run-9d6f4ddf5959",
-      "event_type": "agent.invoke.success",
-      "actor": "stakeholder_map_agent",
-      "payload": {
-        "input_keys": [
-          "opportunity_id"
-        ]
-      }
-    },
-    {
-      "ts": 1781699377.6093364,
-      "run_id": "run-9d6f4ddf5959",
-      "event_type": "agent.invoke.start",
-      "actor": "negotiation_strategy_agent",
-      "payload": {
-        "input_keys": [
-          "snapshot",
-          "findings"
-        ]
-      }
-    },
-    {
-      "ts": 1781699377.6094043,
-      "run_id": "run-9d6f4ddf5959",
-      "event_type": "agent.invoke.success",
-      "actor": "negotiation_strategy_agent",
-      "payload": {
-        "input_keys": [
-          "snapshot",
-          "findings"
-        ]
-      }
-    },
-    {
-      "ts": 1781699377.6094184,
-      "run_id": "run-9d6f4ddf5959",
-      "event_type": "workflow.complete",
-      "actor": "brief_workflow",
-      "payload": {
-        "recommendations": 2
-      }
+        "opportunity_id": "OPP-1001",
+        "created_at": "2026-06-21 08:08:01.487747+00:00",
+        "cost": {
+            "total_cost_usd": 0.0020159,
+            "budget_limit_usd": 0.05,
+            "budget_remaining_usd": 0.0479841,
+            "budget_breached": false,
+            "calls": [
+                {
+                    "model_name": "gpt-4.1-nano",
+                    "prompt_tokens": 811,
+                    "completion_tokens": 900,
+                    "total_tokens": 1711,
+                    "estimated_cost_usd": 0.00044110000000000004
+                },
+                {
+                    "model_name": "gpt-4.1-mini",
+                    "prompt_tokens": 1189,
+                    "completion_tokens": 687,
+                    "total_tokens": 1876,
+                    "estimated_cost_usd": 0.0015748000000000001
+                }
+            ]
+        }
     }
-  ]
 }

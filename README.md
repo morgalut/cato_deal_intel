@@ -1,137 +1,344 @@
-# Cato Strategic Deal Intelligence Assistant
+# Cato Deal Intelligence Assistant
 
-Runnable prototype scaffold for the Agentic AI Engineer home task.
+Production-minded Agentic AI prototype for generating secure Strategic Deal Intelligence Briefs.
 
-## Run DB
+The system uses:
+
+* FastAPI
+* PostgreSQL + pgvector
+* DB-backed Hybrid RAG
+* Permission filtering before retrieval
+* Post-generation citation validation
+* LLM-backed agents
+* Human-in-the-loop approval flow
+* Persistent traces, approvals, and generated briefs
+
+---
+
+## 1. Start PostgreSQL
+
 ```bash
+docker compose up -d --build
+```
+
+Check status:
+
+```bash
+docker compose ps
+```
+
+Reset database completely:
+
+```bash
+docker compose down -v
 docker compose up -d postgres
 ```
 
-## Install
+---
+
+## 2. Create Python environment
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env
 ```
 
-## Run demo
-```bash
-python scripts/run_demo.py --user USR-5001 --opp OPP-1001 --out artifacts/opp1001.json
-python scripts/run_demo.py --user USR-5003 --opp OPP-1003 --out artifacts/opp1003.json
-python scripts/run_demo.py --user USR-5007 --opp OPP-1003
-```
+---
 
-## Run API
-```bash
-uvicorn app.main:app --reload
-curl -X POST http://localhost:8000/briefs/generate \
-  -H 'Content-Type: application/json' \
-  -d '{"user_id":"USR-5001","opportunity_id":"OPP-1001"}'
-```
+## 3. Environment variables
 
-## LangSmith
-Set:
-```bash
-LANGCHAIN_TRACING_V2=true
-LANGCHAIN_API_KEY=...
+Create `.env`:
+
+```env
+DATABASE_URL=postgresql://deal:deal@localhost:5432/deal_intel
+
+OPENAI_API_KEY=
+OPENAI_MODEL=gpt-4.1-mini
+OPENAI_CHEAP_MODEL=gpt-4.1-nano
+
+LLM_MODE=offline
+LOG_LEVEL=INFO
+
+LANGSMITH_TRACING=false
 LANGCHAIN_PROJECT=cato-deal-intelligence
 ```
 
-## Notes
-This scaffold includes deterministic local fallback logic so the architecture can be inspected without keys. In the final exam run, replace the extraction/synthesis internals with live LLM calls and keep the same typed contracts, retrieval tools, guardrails, and traces.
+For live LLM mode:
 
-## Updated: Logging, Dedicated Ingestion Endpoint, Efficient LLM Usage
-
-### Start DB
-
-```bash
-docker compose up -d postgres
+```env
+LLM_MODE=live
+OPENAI_API_KEY=your_key_here
 ```
+If We run in docker-compose 
+```env
 
-### Load evidence into PostgreSQL
+DATABASE_URL=postgresql://deal:deal@postgres:5432/deal_intel
+```
+---
+
+## 4. Run API
 
 ```bash
 uvicorn app.main:app --reload
+```
+
+Open Swagger:
+
+```text
+http://localhost:8000/docs
+```
+
+---
+
+## 5. Health check
+
+```bash
+curl -X GET "http://localhost:8000/health"
+```
+
+---
+
+## 6. Load all task data into DB
+
+This loads:
+
+* `access_permissions`
+* `opportunities`
+* `documents`
+
+```bash
+curl -X POST "http://localhost:8000/ingest/load" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "data_dir": "data",
+    "truncate": true
+  }'
+```
+
+Expected result:
+
+```json
+{
+  "status": "ok",
+  "ingested_permissions": 3,
+  "ingested_opportunities": 3,
+  "ingested_documents": 30,
+  "truncate": true
+}
+```
+
+---
+
+## 7. Generate a brief
+
+Authorized example:
+
+```bash
+curl -X POST "http://localhost:8000/briefs/generate" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_id": "USR-5001",
+    "opportunity_id": "OPP-1001"
+  }'
+```
+
+Sensitive opportunity example:
+
+```bash
+curl -X POST "http://localhost:8000/briefs/generate" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_id": "USR-5001",
+    "opportunity_id": "OPP-1003"
+  }'
+```
+
+Unauthorized example:
+
+```bash
+curl -X POST "http://localhost:8000/briefs/generate" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_id": "USR-5007",
+    "opportunity_id": "OPP-1003"
+  }'
+```
+
+Expected result:
+
+```json
+{
+  "detail": "Access denied"
+}
+```
+
+---
+
+## 8. Approval endpoints
+
+List pending approvals:
+
+```bash
+curl -X GET "http://localhost:8000/approvals/pending"
+```
+
+List pending approvals for one opportunity:
+
+```bash
+curl -X GET "http://localhost:8000/approvals/pending?opportunity_id=OPP-1001"
+```
+
+Approve request:
+
+```bash
+curl -X POST "http://localhost:8000/approvals/APR_EXAMPLE_ID/approve?reviewer_id=USR-MANAGER-1&reason=Approved"
+```
+
+Reject request:
+
+```bash
+curl -X POST "http://localhost:8000/approvals/APR_EXAMPLE_ID/reject?reviewer_id=USR-MANAGER-1&reason=Rejected"
+```
+
+---
+
+## 9. Run demo script
+
+```bash
+PYTHONPATH=. python scripts/run_demo.py \
+  --user USR-5001 \
+  --opp OPP-1001 \
+  --out artifacts/brief_OPP-1001.json
+```
+
+Sensitive deal:
+
+```bash
+PYTHONPATH=. python scripts/run_demo.py \
+  --user USR-5001 \
+  --opp OPP-1003 \
+  --out artifacts/brief_OPP-1003.json
+```
+
+---
+
+## 10. Inspect database manually
+
+Connect:
+
+```bash
+docker exec -it cato-deal-intel-postgres psql -U deal -d deal_intel
+```
+
+Check loaded permissions:
+
+```sql
+SELECT user_id, role, allowed_account_ids, allowed_source_types
+FROM access_permissions;
+```
+
+Check opportunities:
+
+```sql
+SELECT opportunity_id, account_id, risk_level, restricted_access
+FROM opportunities;
+```
+
+Check documents:
+
+```sql
+SELECT source_type, source_access_level, COUNT(*)
+FROM documents
+GROUP BY source_type, source_access_level;
+```
+
+Check approvals:
+
+```sql
+SELECT approval_id, opportunity_id, status, approval_types
+FROM approval_requests
+ORDER BY created_at DESC;
+```
+
+Check traces:
+
+```sql
+SELECT run_id, event_type, actor, created_at
+FROM trace_events
+ORDER BY created_at DESC
+LIMIT 20;
+```
+
+Check saved briefs:
+
+```sql
+SELECT brief_id, run_id, user_id, opportunity_id, created_at
+FROM generated_briefs
+ORDER BY created_at DESC;
+```
+
+---
+
+## 11. Run quality checks
+
+```bash
+ruff check . --fix
+ruff format .
+python -m mypy app scripts tests
+```
+
+Run tests:
+
+```bash
+pytest -q
+```
+
+---
+
+## 12. Expected end-to-end flow
+
+```text
+1. docker compose up -d postgres
+2. uvicorn app.main:app --reload
+3. POST /ingest/load
+4. POST /briefs/generate
+5. System checks permissions
+6. System retrieves only allowed evidence from DB
+7. Agents generate grounded findings and recommendations
+8. Approval router creates pending approvals if needed
+9. Permission service validates final citations
+10. Trace events are saved
+11. Brief is saved
+12. API returns safe response
+```
+
+---
+
+## 13. Main security guarantees
+
+The system enforces:
+
+* Permission check before retrieval
+* DB-level evidence scope filtering
+* No file-based retrieval in production workflow
+* Structured LLM output validation
+* Deterministic approval routing
+* Post-generation citation validation
+* Persistent audit traces
+* Persistent approval state
+* Persistent generated briefs
+
+---
+
+## 14. Important note
+
+Before generating briefs, always run:
+
+```bash
 curl -X POST "http://localhost:8000/ingest/load" \
   -H "Content-Type: application/json" \
   -d '{"data_dir":"data","truncate":true}'
 ```
 
-The ingestion endpoint is deterministic and does **not** call the LLM. It normalizes Salesforce, Gong, pricing, policy, and synthetic Slack evidence into the `documents` table.
-
-### Generate a brief
-
-```bash
-curl -X POST "http://localhost:8000/briefs/generate" \
-  -H "Content-Type: application/json" \
-  -d '{"user_id":"USR-5003","opportunity_id":"OPP-1003"}'
-```
-
-
-### Check Ruff And Mypy
-```bash
-ruff check app --fix
-ruff format app
-mypy app
-
-```
-
-
-### Enable live LLM calls
-
-```bash
-export OPENAI_API_KEY="..."
-export LLM_MODE=live
-export OPENAI_MODEL=gpt-4.1-mini
-export OPENAI_CHEAP_MODEL=gpt-4.1-nano
-```
-
-### Enable LangSmith tracing
-
-```bash
-export LANGSMITH_TRACING=true
-export LANGSMITH_API_KEY="..."
-export LANGSMITH_PROJECT="cato-deal-intel"
-```
-
-### Logs
-
-All stages emit JSON logs:
-
-- workflow start/end
-- permission checks
-- evidence loading
-- hybrid RAG retrieval
-- tool execution
-- LLM call and token usage
-- approval routing
-- brief generation
-
-See `docs/DEEP_PLA_LOGGING_LLM_RAG.md` for the deep PLA explanation.
-
-## Production Structure Update
-
-This version separates HTTP endpoints, dependencies, repositories, and workflow logic:
-
-```text
-app/api/endpoints/       # FastAPI routers only
-app/dependencies/        # Dependency injection providers
-app/repositories/        # Repository Design Pattern and DB access
-app/workflows/           # Orchestration/state flow
-app/agents/              # LLM-backed agent contracts
-app/rag/                 # Hybrid RAG loader/retriever
-app/observability/       # structured logs and traces
-```
-
-Important endpoints:
-
-```http
-GET  /health
-POST /ingest/load
-POST /briefs/generate
-```
-
-The ingestion endpoint is intentionally deterministic and does not call the LLM. The model is only used after authorization, metadata filtering, and retrieval.
-
-See `docs/PRODUCTION_DESIGN_PATTERNS.md` for the design-pattern explanation.
+Without this step, the DB-backed `PermissionService` and `DatabaseHybridRetriever` will not have the required data.

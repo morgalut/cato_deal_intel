@@ -1,4 +1,23 @@
+# cato_deal_intel/docker-compose.yml
+
 services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cato-deal-intel-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./app:/app/app
+      - ./scripts:/app/scripts
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
   postgres:
     image: pgvector/pgvector:pg16
     container_name: cato-deal-intel-postgres
@@ -16,5 +35,6 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+
 volumes:
   deal_pgdata:

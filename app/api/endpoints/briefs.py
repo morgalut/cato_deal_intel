@@ -2,12 +2,11 @@ from __future__ import annotations
 
 from typing import Annotated, Any
 
-from fastapi import APIRouter, Depends, HTTPException
-
 from app.dependencies.container import get_brief_workflow
 from app.schemas.api_models import BriefRequest
 from app.security.permissions import PermissionDeniedError
 from app.workflows.brief_workflow import BriefWorkflow
+from fastapi import APIRouter, Depends, HTTPException
 
 router = APIRouter(
     prefix="/briefs",

@@ -35,15 +35,11 @@ select = [
   "ARG",
   "PTH",
   "RUF",
-  "TRY",
-  "PERF",
-  "LOG",
 ]
 
 ignore = [
   "ANN401",
 ]
-
 [lint.per-file-ignores]
 "tests/**/*.py" = ["ANN", "S101", "ARG"]
 "scripts/**/*.py" = ["T201"]
