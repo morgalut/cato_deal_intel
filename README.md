@@ -16,7 +16,7 @@ The system uses:
 ---
 
 ## 1. Start PostgreSQL
-### It should be noted that within the compose there is also the server. If you want to run it locally, you need to add the server to the comment inside the compose.
+### It should be noted that within the docker compose there is also the server. If you want to run it locally, you need to remove the server from the docker compose.
 ```bash
 docker compose up -d --build
 ```
